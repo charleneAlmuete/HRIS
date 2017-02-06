@@ -1,0 +1,29 @@
+<h4><b><u>Performance Review 
+	<button class="btn btn-link pull-right" ng-click="addDialogPerformance()"><i class="fa fa-plus"></i></button>  
+</b></u></h4><br />    
+<div class="col-lg-12 table-responsive"> 
+	<table class="table table-hover">
+		<thead class="table-header">
+			<tr>
+				<th style="display:none">ID</th>  
+				<th class="text-left">Month Review</th>
+				<th class="text-right">Rating</th> 
+				<th class="text-center">Remarks</th>  
+			</tr>
+		</thead>
+		<tbody>
+			<tr dir-paginate="performance in profPerformances|filter:search|itemsPerPage:15" >
+				<td style="display:none"> {{performance.id}} </td>  
+				<td class="text-left"> {{performance.monthReview}} </td>
+				<td class="text-right"> {{performance.rating}} </td>  
+				<td class="text-center"> {{performance.remarks}} </td>  
+			</tr>
+		</tbody>
+	</table>
+	<dir-pagination-controls
+		class="pull-right"
+		max-size="10"
+		direction-links="true"
+		boundary-links="true" >
+	</dir-pagination-controls>
+</div> 

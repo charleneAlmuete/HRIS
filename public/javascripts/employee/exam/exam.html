@@ -1,0 +1,34 @@
+<h4><b><u>Licensure and Examinations 
+	<button class="btn btn-link pull-right" ng-click="addExamDialog()"><i class="fa fa-plus"></i></button>  
+</b></u></h4><br /> 
+<div class="col-lg-12 table-responsive">
+	<table id="examInfo" class="table table-hover">
+		<thead class="table-header">
+			<tr>
+				<th style="display:none">ID</th>
+				<th>Name</th>
+				<th class="text-center">Rating</th>
+				<th class="text-center">License No</th>
+				<th class="text-center">Image</th>
+				<th class="text-right">Action</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="examination in exams">
+				<td style="display:none"> {{examination.id}} </td>
+				<td> {{examination.name}} </td>
+				<td class="text-center"> {{examination.rating}} </td>
+				<td class="text-center"> {{examination.licenseNo}} </td>
+				<td class="text-center"> {{examination.image}} </td>
+				<td class="text-right">
+					<a class="btn btn-default btn-sm" ng-click="editExamDialog( examination )">
+						<i class="fa fa-pencil"></i>
+					</a>
+					<a class="btn btn-default btn-sm" ng-click="deleteExam( examination.id )">
+						<i class="fa fa-trash"></i>
+					</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

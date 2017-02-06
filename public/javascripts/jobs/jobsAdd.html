@@ -1,0 +1,84 @@
+<h4>Job Entry</h4> <hr />
+<form class="form-horizontal" method="POST"> 
+	<div class="col-lg-12"> 
+		<div class="form-group">
+			<label class="col-lg-4">Job Title</label>
+			<div class="col-lg-8">
+				<select class="form-control" ng-model="job.position_id" ng-options="position.id as position.name for position in positions" ng-change="getPositionId( job.position_id )"></select> 
+			</div> 
+		</div> 
+		<!-- <div class="form-group" ng-show="skills">
+			<label class="col-lg-4">Preferred Skills</label> 
+			<div class="col-lg-8">
+				<ul ng-repeat= "skills in skillsModel">
+					<li> {{ skills.skills }} </li>
+				</ul> 
+				<div ng-dropdown-multiselect="" options="skillsData" selected-model="positionskill_id" checkboxes="true" extra-settings="skillsSettings" ng-model="positionskill_id"></div>
+				<pre>Selected Model: {{skillsModel}} | json</pre> 
+			</div>   
+		</div>   -->
+		<div class="form-group">
+			<label class="col-lg-4">Company</label>
+			<div class="col-lg-8">
+				<select class="form-control" ng-model="job.company_id" ng-options="company.id as company.code for company in companies"></select>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-4">Location</label>
+			<div class="col-lg-8">
+				<select class="form-control" ng-model="job.branch_id" ng-options="branch.id as branch.name for branch in branches"></select>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-4">Employment Status</label>
+			<div class="col-lg-8">
+				<select class="form-control" ng-model="job.empStatus">
+					<option></option>
+					<option>Part Time</option>
+					<option>Full Time</option>
+					<option>Project Base</option>
+					<option>Others</option>
+				</select>
+			</div>
+		</div>  
+		<div class="form-group">
+			<label class="col-lg-4">Qualification</label>
+			<div class="col-lg-8">
+				<select class="form-control" ng-model="job.qualification">
+					<option></option>
+					<option>4-year course</option>
+					<option>2-year course</option>
+					<option>Vocational</option>
+					<option>High School</option>
+				</select>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-4">Duties & Responsibilities</label>
+			<div class="col-lg-8">
+				<textarea class="form-control" ng-model="job.dutiesResponsibility"></textarea>
+			</div>
+		</div> 
+		<div class="form-group">
+			<label class="col-lg-4">Effective Date</label>
+			<div class="col-lg-8">
+				<div class="input-group" moment-picker="job.dateFiled" format="YYYY-MM-DD"> 
+					<input class="form-control" ng-model="job.dateFiled">
+					<span class="input-group-addon">
+						<i class="fa fa-calendar"></i>
+					</span>
+				</div> 
+			</div>
+		</div>  
+	</div> 
+	<div class="col-lg-12">  
+		<ul class="list-unstyled list-inline pull-right"> 
+			<li ng-show="add">
+				<button type="button" class="btn btn-success btn-sm" ng-click="addJob( job )"> SAVE </button>
+			</li>
+			<li ng-show="!add">
+				<button type="button" class="btn btn-success btn-sm" ng-click="updateJob( job )"> UPDATE</button>
+			</li> 
+		</ul>
+	</div>  
+</form> 

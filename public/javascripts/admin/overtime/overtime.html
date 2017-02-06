@@ -1,0 +1,163 @@
+<div class="form-group">   
+	<ul class="list-unstyled list-inline pull-right">  
+		<li ng-repeat="getRole in rolesId"> 
+			<button class="btn btn-link" ng-click="addDialogOvertime()" ng-if="getRole.role_id != '6'"><span class="fa fa-plus"></span></button> 
+		</li>  
+	</ul>  
+	<h2>Overtime Applicants</h2> <br />  
+</div>
+<div class="row row-base">
+	<div class="form-group">  
+		<input class="form-control" ng-model="com.company_id" style="display:none"></input>  
+		<div class="col-lg-3" ng-repeat="getRole in rolesId"> 
+			<div class="input-group" ng-if="getRole.role_id == '6'"> 
+				<input type="text" class="form-control col-xs-12" placeholder="Search Employee" ng-model="search.employee"> 
+				<span class="input-group-addon"><i class="fa fa-search"></i> </span>
+			</div>  
+		</div>  
+	</div> 
+	<div class="col-lg-12"  ng-repeat="getRole in rolesId"><br />
+		<!-- ADMIN -->
+	<!-- <div class="table-responsive" ng-if="getRole.role_id == '5'">
+		<table class="table table-hover">
+			<thead style="background-color:#2A3F54;color:white">
+				<tr>
+					<th style="display:none">ID</th>
+					<th>Employee</th>  
+					<th class="text-left">Date Filed</th>
+					<th class="text-left">Date Requested</th> 
+					<th class="text-center">Total Hours</th>
+					<th style="display:none">Reason</th> 
+					<th class="text-center">Status</th> 
+					<th class="text-right">Action</th> 
+				</tr>
+			</thead>
+			<tbody>
+				<tr dir-paginate="overtime in overtimes|itemsPerPage:15|filter:search " >
+					<td style="display:none"> {{overtime.id}} </td>
+					<td> {{overtime.employee}} </td> 
+					<td class="text-left"> {{overtime.dateFiled}} </td>
+					<td class="text-left"> {{overtime.dateRequested}} </td> 
+					<td class="text-center"> {{overtime.totalHours}} </td>
+					<td style="display:none"> {{overtime.reason}} </td> 
+					<td class="text-center" ng-if="overtime.status == 'Approved by Manager' "><span class="label label-green"> {{overtime.status}} </span></td> 
+					<td class="text-center" ng-if="overtime.status == 'Dissaproved by Manager' "><span class="label label-gray"> {{overtime.status}} </span></td>  
+					<td class="text-center" ng-if="overtime.status == 'Approved by HR' "><span class="label label-violet"> {{overtime.status}} </span></td>
+					<td class="text-center" ng-if="overtime.status == 'Dissaproved by HR' "><span class="label label-gray"> {{overtime.status}} </span></td>
+					<td class="text-center" ng-if="overtime.status == 'For Manager Approval' "><span class="label label-brown"> {{overtime.status}} </span></td>   
+					<td class="text-right">  
+						<a class="btn btn-default btn-xs" title="Edit" ng-click="editOvertimes( overtime )" ng-if="overtime.status == 'For Manager Approval'"> 
+							<i class="fa fa-pencil"></i>
+						</a>
+						<a class="btn btn-danger btn-xs" title="Cancel" ng-click="delete( overtime.id )"  >
+							<i class="fa fa-times"></i>
+						</a> 
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<dir-pagination-controls
+			class="pull-right"
+			max-size="10"
+			direction-links="true"
+			boundary-links="true" >
+		</dir-pagination-controls>  
+	</div> -->
+	<div class="table-responsive" ng-if="getRole.role_id == '4' || getRole.role_id == '5'">
+		<table class="table table-hover"><!-- USER -->
+			<thead class="table-header">
+				<tr>
+					<th style="display:none">ID</th>
+					<!-- <th>Employee</th>   -->
+					<th class="text-left">Date Filed</th>
+					<th class="text-left">Date Requested</th> 
+					<th class="text-center">Total Hours</th>
+					<th style="display:none">Reason</th> 
+					<th class="text-center">Status</th> 
+					<th class="text-right">Action</th> 
+				</tr>
+			</thead>
+			<tbody>
+				<tr dir-paginate="overtimeUser in overtimeUsers|itemsPerPage:15|filter:search " >
+					<td style="display:none"> {{overtimeUser.id}} </td>
+					<!-- <td> {{overtime.employee}} </td>  -->
+					<td class="text-left"> {{overtimeUser.dateFiled}} </td>
+					<td class="text-left"> {{overtimeUser.dateRequested}} </td> 
+					<td class="text-center"> {{overtimeUser.totalHours}} </td>
+					<td style="display:none"> {{overtimeUser.reason}} </td> 
+					<td class="text-center" ng-if="overtimeUser.status == 'Approved by Manager' "><span class="label label-green"> {{overtimeUser.status}} </span></td> 
+					<td class="text-center" ng-if="overtimeUser.status == 'Dissaproved by Manager' "><span class="label label-gray"> {{overtimeUser.status}} </span></td>  
+					<td class="text-center" ng-if="overtimeUser.status == 'Approved by HR' "><span class="label label-violet"> {{overtimeUser.status}} </span></td>
+					<td class="text-center" ng-if="overtimeUser.status == 'Dissaproved by HR' "><span class="label label-gray"> {{overtimeUser.status}} </span></td>
+					<td class="text-center" ng-if="overtimeUser.status == 'For Manager Approval' "><span class="label label-brown"> {{overtimeUser.status}} </span></td>    
+					<td class="text-right">  
+						<a class="btn btn-default btn-sm" title="Edit" ng-click="editOvertimes( overtimeUser )" ng-if="overtimeUser.status == 'For Manager Approval'"> 
+							<i class="fa fa-pencil"></i>
+						</a>
+						<a class="btn btn-danger btn-sm" title="Cancel" ng-click="delete( overtimeUser.id )"  >
+							<i class="fa fa-times"></i>
+						</a> 
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<dir-pagination-controls
+		class="pull-right"
+		max-size="10"
+		direction-links="true"
+		boundary-links="true" >
+	</dir-pagination-controls>  
+</div>
+<div class="table-responsive" ng-if="getRole.role_id == '6'">
+	<table class="table table-hover"><!-- MANAGER -->
+		<thead class="table-header">
+			<tr>
+				<th style="display:none">ID</th>
+				<th>Employee</th>  
+				<th class="text-left">Date Filed</th>
+				<th class="text-left">Date Requested</th> 
+				<th class="text-center">Total Hours</th>
+				<th style="display:none">Reason</th> 
+				<th class="text-center">Status</th> 
+				<th class="text-right">Action</th> 
+			</tr>
+		</thead>
+		<tbody>
+			<tr dir-paginate="overtimeManager in overtimeManagers|itemsPerPage:15|filter:search " >
+				<td style="display:none"> {{overtimeManager.id}} </td>
+				<td> {{overtimeManager.employee}} </td> 
+				<td class="text-left"> {{overtimeManager.dateFiled}} </td>
+				<td class="text-left"> {{overtimeManager.dateRequested}} </td> 
+				<td class="text-center"> {{overtimeManager.totalHours}} </td>
+				<td style="display:none"> {{overtimeManager.reason}} </td> 
+				<td class="text-center" ng-if="overtimeManager.status == 'Approved by Manager' "><span class="label label-green"> {{overtimeManager.status}} </span></td> 
+				<td class="text-center" ng-if="overtimeManager.status == 'Dissaproved by Manager' "><span class="label label-gray"> {{overtimeManager.status}} </span></td>  
+				<td class="text-center" ng-if="overtimeManager.status == 'Approved by HR' "><span class="label label-violet"> {{overtimeManager.status}} </span></td>
+				<td class="text-center" ng-if="overtimeManager.status == 'Dissaproved by HR' "><span class="label label-gray"> {{overtimeManager.status}} </span></td>
+				<td class="text-center" ng-if="overtimeManager.status == 'For Manager Approval' "><span class="label label-brown"> {{overtimeManager.status}} </span></td>   
+				<td class="text-right"> 
+					<a class="btn btn-success btn-sm" title="Approve" ng-click="approveOvertime( overtimeManager )" ng-if="overtimeManager.status == 'For Manager Approval'">
+						<i class="fa fa-thumbs-o-up"></i>
+					</a>
+					<a class="btn btn-warning btn-sm" title="Dissaprove" ng-click="declineOvertime( overtimeManager )" ng-if="overtimeManager.status == 'For Manager Approval' ">
+						<i class="fa fa-thumbs-o-down"></i>
+					</a> 
+					<a class="btn btn-default btn-sm" title="Edit" ng-click="editOvertimes( overtimeManager )" ng-if="overtimeManager.status == 'For Manager Approval'"> 
+						<i class="fa fa-pencil"></i>
+					</a>
+					<a class="btn btn-danger btn-sm" title="Cancel" ng-click="delete( overtimeManager.id )"  >
+						<i class="fa fa-times"></i>
+					</a> 
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<dir-pagination-controls
+	class="pull-right"
+	max-size="10"
+	direction-links="true"
+	boundary-links="true" >
+</dir-pagination-controls>  
+</div>
+</div>  
+</div>

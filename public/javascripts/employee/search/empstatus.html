@@ -1,0 +1,22 @@
+<h4> Change Employment Status: </h4><hr />
+<div class="col-lg-12">
+	<div class="form-group">
+		<label class="radio-inline"><input type="radio" name="emp_status" value="Active" ng-model="navbarField.emp_status" checked>(<i class="fa fa-check-circle-o"></i>) Active </input> </label> 
+	</div>
+	<div class="form-group">
+		<label class="radio-inline"><input type="radio" name="emp_status" value="Resigned" ng-model="navbarField.emp_status">(<i class="fa fa-ban"></i>) Resigned </input> </label>
+	</div>
+	<div class="form-group">
+		<label class="radio-inline"><input type="radio" name="emp_status" value="Terminated" ng-model="navbarField.emp_status">(<i class="fa fa-times-circle-o"></i>) Terminated </input> </label>  
+	</div>
+	<div class="form-group">
+		<label class="radio-inline"><input type="radio" name="emp_status" value="Suspended" ng-model="navbarField.emp_status">(<i class="fa fa-pause-circle-o"></i>) Suspended </input> </label>
+	</div>
+</div> 
+<div class="col-lg-12">
+	<ul class="list-unstyled list-inline pull-right"> 
+		<li>
+			<button class="btn btn-success btn-sm" ng-click="updateEmploymentStatus( navbarField )"> SAVE </button> 
+		</li>  
+	</ul>
+</div>

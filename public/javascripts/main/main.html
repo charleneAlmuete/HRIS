@@ -1,0 +1,174 @@
+<div class="container-fluid">   
+	<nav class="navbar navbar-default navbar-fixed-top main-navbar" role="navigation">    
+		<div class="navbar-header">
+			<button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>   
+			<a class="navbar-brand"> 
+				<img class="img-responsive"  width="72" style="margin: 9px;" src="public/stylesheets/logo.png">
+			</a> 
+		</div> 
+		<div id="navbarCollapse" class="collapse navbar-collapse navigation">
+			<ul class="nav nav-pills navbar-right">
+				<li ng-repeat="renewal in renewals" ng-class="{active:$state.includes('main.renewal')}"> 
+					<a id="iconMenu"  ui-sref="main.renewal" title="Renewal of Contracts">
+						<span class="fa fa-refresh fa-lg"> </span>
+						<span class="badge badge-danger" ng-if=" renewal.renewalCount != '0' "> {{ renewal.renewalCount }} </span> 
+						<span class="badge badge-danger" ng-if=" renewal.renewalCount == '0' "> {{   }} </span> 
+					</a> 
+				</li>
+				<li ng-repeat="leave in leaves" ng-class="{active:$state.includes('main.leave')}"> 
+					<a id="iconMenu" ui-sref="main.leave" title="Leave Requests"> 
+						<span class="fa fa-calendar fa-lg"> </span>
+						<span class="badge badge-danger" ng-if=" leave.leaveCount != '0' "> {{ leave.leaveCount }} </span> 
+						<span class="badge badge-danger" ng-if=" leave.leaveCount == '0' "> {{   }} </span> 
+					</a>
+				</li>
+				<li ng-repeat="overtime in overtimes" ng-class="{active:$state.includes('main.overtime')}"> 
+					<a id="iconMenu" ui-sref="main.overtime" title="Overtime Requests"> 
+						<span class="fa fa-clock-o fa-lg"> </span>
+						<span class="badge badge-danger" ng-if=" overtime.overtimeCount != '0' "> {{ overtime.overtimeCount }} </span> 
+						<span class="badge badge-danger" ng-if=" overtime.overtimeCount == '0' "> {{   }} </span> 
+					</a>
+				</li>
+				<li ng-repeat="birthday in birthdays" ng-class="{active:$state.includes('main.birthday')}"> 
+					<a id="iconMenu" ui-sref="main.birthday" title="Birthdays"> 
+						<span class="fa fa-birthday-cake fa-lg"> </span>
+						<span class="badge badge-danger" ng-if=" birthday.dateBirth != '0' "> {{ birthday.dateBirth }} </span> 
+						<span class="badge badge-danger" ng-if=" leave.leaveCount == '0' "> {{   }} </span> 
+					</a>
+				</li> 
+				<li class="dropdown hidden-xs hidden-sm" ng-repeat="employeeLogin in employees">
+					<a id="iconMenu" class="dropdown-toggle" data-toggle="dropdown" style="cursor:pointer;height:69px;padding-top:18px"> 
+						<img class="img-circle"  width="38" src="http://bootsnipp.com/img/avatars/ebeb306fd7ec11ab68cbcaa34282158bd80361a7.jpg">
+					</a>
+					<ul class="dropdown-menu">
+						<li>
+							<div class="navbar-login">
+								<div class="row">
+									<div class="col-lg-5"> 
+										<img class="img-circle" src="http://bootsnipp.com/img/avatars/ebeb306fd7ec11ab68cbcaa34282158bd80361a7.jpg" width="120">
+									</div>
+									<div class="col-lg-7">
+										<p class="text-left" ng-repeat="employeeLogin in employees">
+											{{ dateValue | date: 'shortDate' }} <br />
+											{{ employeeLogin.fName + ' ' + employeeLogin.mi + ' ' + employeeLogin.lName }} <br />
+											<small>
+												{{ employeeLogin.role }}<br />
+												{{ employeeLogin.position }}
+											</small>
+										</p> 
+									</div> 
+								</div>
+							</div>
+						</li>
+						<li class="divider"></li>
+						<li> 
+							<div class="col-lg-12 logout_li"> 
+								<button class="btn btn-info btn-block" ui-sref="login">Logout </button>  
+							</div>  
+						</li> 
+					</ul>  
+				</li>
+				<li class="hidden-lg hidden-md">
+					<a id="iconMenu" href="#/login" title="Logout">
+						<span class="glyphicon glyphicon-log-out fa-lg"> </span>
+					</a>
+				</li> 
+			</ul>
+		</div>   
+	</nav>    
+</div>   
+<div id="wrapper"> 
+	<div id="sidebar-wrapper">  
+		<ul class="sidebar-nav">  
+			<section class="menu">  
+				<li>
+					<h5><small><b>HR NAVIGATION</b></small></h5><hr />
+				</li>
+				<li> 
+					<a ui-sref="main.search"><i class="fa fa-user"></i> &nbsp; Employee</a> 
+				</li><br />
+				<li>
+					<a ui-sref="main.leave({ empId: 0 })"><i class="fa fa-calendar"></i> &nbsp; Leaves</a> 
+				</li> <br />
+				<li>
+					<a ui-sref="main.overtime"><i class="fa fa-clock-o"></i> &nbsp; Overtime</a> 
+				</li> <br />
+				<li>
+					<a ui-sref="main.jobs"><i class="fa fa-briefcase"></i> &nbsp; Jobs</a> 
+				</li><br />
+				<li>
+					<a ui-sref="main.violation"><i class="fa fa-file-word-o "></i> &nbsp; Memo</a> 
+				</li> <br />
+				<li>
+					<a ui-sref="main.trainDev"><i class="fa fa-bar-chart"></i> &nbsp; Trainings</a>  
+				</li>  <br /> 
+				<div id="myAccordion">  
+					<li class="panel myAccordion">
+						<a data-toggle="collapse" data-parent="#myAccordion" data-target="#health" href=""><i class="fa fa-medkit"></i> &nbsp; Health & Safety</a>  
+						<div class="collapse" id="health"><br /> 
+							<ul class="nav">
+								<li><a ui-sref="main.incident">Incidents & Accidents</a></li> <br />
+								<li><a ui-sref="main.medHealth">Medical Records</a></li> 
+							</ul> 
+						</div>
+					</li><br />
+					<li class="panel myAccordion">
+						<a data-toggle="collapse" data-parent="#myAccordion" data-target="#benefits" href=""><i class="fa fa-star"></i> &nbsp; Pay & Benefits</a>
+						<div class="collapse" id="benefits"><br />   
+							<ul class="nav">
+								<li><a ui-sref="main.compensationShow">Compensation History</a></li> <br />
+								<li><a ui-sref="main.leaveShow">Leave Credits</a></li> <br />
+								<li><a ui-sref="main.benefitShow">Benefits Information</a></li> <br /> 
+								<li><a ui-sref="main.loans"> Loan Information</a> </li> <br /> 
+								<li><a ui-sref="main.bankingShow">Bank Information</a></li> 
+							</ul> 
+						</div>
+					</li><br /> 
+				</div> 
+				<li>
+					<a ui-sref="main.settings"><i class="fa fa-cogs"></i> &nbsp; Settings</a> 
+				</li><br />
+				<li>
+					<a ui-sref="main.payslip"><i class="fa fa-file"></i> &nbsp; Payslips</a> 
+				</li><br />
+			</section>
+		</ul>   
+	</div> 
+	<div id="nav_menu page-content-wrapper"> 
+		<div class="container-fluid"> 
+			<div class="background-content">
+				<div class="container-fluid">
+					<ui-view></ui-view> 
+				</div>  
+			</div>
+		</div>
+	</div> 
+</div>
+
+
+<!-- <div class="col-xs-6 col-sm-3 col-sm-pull-9 sidebar-offcanvas" id="sidebar">
+	<div class="list-group">
+		<a href="#" class="list-group-item active">I'm the Sidebar</a>
+		<a href="#" class="list-group-item">Link</a>
+		<a href="#" class="list-group-item">Link</a>
+		<a href="#" class="list-group-item">Link</a>
+		<a href="#" class="list-group-item">Link</a>
+		<a href="#" class="list-group-item">Link</a>
+		<a href="#" class="list-group-item">Link</a>
+		<a href="#" class="list-group-item">Link</a>
+		<a href="#" class="list-group-item">Link</a>
+		<a href="#" class="list-group-item">Link</a>
+	</div>
+</div> -->
+
+
+
+
+
+
+

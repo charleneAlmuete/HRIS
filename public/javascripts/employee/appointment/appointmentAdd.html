@@ -1,0 +1,111 @@
+ <h4>Add Appointment </h4>
+ <form class="form-horizontal" name="userForm" ng-submit="submitForm(userForm.$valid)" novalidate>
+ 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
+ 		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+ 			<h5><b><u>Job Information</b></u></h5><hr>  
+ 			<div class="form-group has-feedback" ng-class="{ 'has-error': (userForm.position.$invalid && userForm.position.$touched) }">
+ 				<label class="col-lg-5">Position<span>*</span></label>
+ 				<div class="col-lg-7">
+ 					<select class="form-control" name="position" ng-model="serv.position_id" ng-options="position.id as position.name for position in positions" required></select> 
+ 				</div>
+ 			</div>
+ 			<div class="form-group has-feedback" ng-class="{ 'has-error': (userForm.status.$invalid && userForm.status.$touched) }">
+ 				<label class="col-lg-5">Status<span>*</span></label>
+ 				<div class="col-lg-7">
+ 					<select class="form-control" name="status" ng-model="serv.employmentStatus" required>
+ 						<option></option>
+ 						<option>Trainee</option>
+ 						<option>Probitionary</option>
+ 						<option>Regular</option>
+ 					</select>
+ 				</div>
+ 			</div>
+ 			<div class="form-group has-feedback" ng-class="{ 'has-error': (userForm.dataasigned.$invalid && userForm.dataasigned.$touched) }"> 
+ 				<label class="col-lg-5">Date Assigned<span>*</span></label>
+ 				<div class="col-lg-7">
+ 					<div class="input-group" moment-picker="serv.dateAssigned" format="YYYY-MM-DD"> 
+ 						<input class="form-control" name="dataasigned" ng-model="serv.dateAssigned" required>
+ 						<span class="input-group-addon">
+ 							<i class="fa fa-calendar"></i>
+ 						</span>
+ 					</div>
+ 				</div> 	
+ 			</div>
+ 			<div class="form-group"> 
+ 				<label class="col-lg-5">Date to Prompt<span>*</span></label>
+ 				<div class="col-lg-7">
+ 					<div class="input-group" moment-picker="serv.datePrompt" format="YYYY-MM-DD"> 
+ 						<input class="form-control" ng-model="serv.datePrompt">
+ 						<span class="input-group-addon">
+ 							<i class="fa fa-calendar"></i>
+ 						</span>
+ 					</div>
+ 				</div> 	
+ 			</div>
+
+ 			<div class="form-group has-feedback" ng-class="{ 'has-error': (userForm.company.$invalid && userForm.company.$touched) }">
+ 				<label class="col-lg-5">Company<span>*</span></label>
+ 				<div class="col-lg-7">
+ 					<select class="form-control" name="company" ng-model="serv.company_id" ng-options="company.id as company.code for company in companies" required></select>
+ 				</div>
+ 			</div>
+ 			<div class="form-group has-feedback" ng-class="{ 'has-error': (userForm.branch.$invalid && userForm.branch.$touched) }">
+ 				<label class="col-lg-5">Branch<span>*</span></label>
+ 				<div class="col-lg-7">
+ 					<select class="form-control" name="branch" ng-model="serv.branch_id" ng-options="branch.id as branch.name for branch in branches" required></select> 
+ 				</div>
+ 			</div>
+ 			<div class="form-group has-feedback" ng-class="{ 'has-error': (userForm.salary.$invalid && userForm.salary.$touched) }">
+ 				<label class="col-lg-5">Salary<span>*</span></label>
+ 				<div class="col-lg-7">
+ 					<input class="form-control" name="salary" type="text" ng-model="serv.basicSalary" required></input>
+ 					<span class="glyphicon glyphicon-remove form-control-feedback" ng-show="(userForm.salary.$invalid  && userForm.salary.$touched) "></span> 
+ 				</div>
+ 			</div> 
+ 			<div class="form-group has-feedback" ng-class="{ 'has-error': (userForm.remarks.$invalid && userForm.remarks.$touched) }">
+ 				<label class="col-lg-5">Remarks<span>*</span></label>
+ 				<div class="col-lg-7">
+ 					<textarea class="form-control" name="remarks" type="text" ng-model="serv.remarks" required></textarea>
+ 					<span class="glyphicon glyphicon-remove form-control-feedback" ng-show="(userForm.remarks.$invalid  && userForm.remarks.$touched) "></span> 
+ 				</div>
+ 			</div> 
+ 		</div>
+ 		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+ 			<h5><b><u>Deductions Information</b></u></h5><hr>
+ 			<div class="form-group">
+ 				<label class="col-lg-5">SSS</label>
+ 				<div class="col-lg-7">
+ 					<input class="form-control" type="text" ng-model="serv.sss" ></input>
+ 				</div>
+ 			</div>
+ 			<div class="form-group">
+ 				<label class="col-lg-5">PHIC</label>
+ 				<div class="col-lg-7">
+ 					<input class="form-control" type="text" ng-model="serv.phic" ></input>
+ 				</div>
+ 			</div>
+ 			<div class="form-group">
+ 				<label class="col-lg-5">HDMF</label>
+ 				<div class="col-lg-7">
+ 					<input class="form-control" type="text" ng-model="serv.hdmf" ></input>
+ 				</div>
+ 			</div>
+ 			<div class="form-group">
+ 				<label class="col-lg-5">Withholding Tax</label>
+ 				<div class="col-lg-7">
+ 					<input class="form-control" type="text" ng-model="serv.tax" ></input>
+ 				</div>
+ 			</div>
+ 		</div> 
+ 	</div>
+ 	<div class="col-lg-12">   
+ 		<ul class="list-unstyled list-inline pull-right">
+ 			<li ng-show="add">
+ 				<button class="btn btn-success btn-sm" ng-click="addService( serv )">SAVE</button> 
+ 			</li> 
+ 			<li ng-show="!add">
+ 				<button class="btn btn-success btn-sm" ng-click="updateService( serv )">UPDATE</button> 
+ 			</li>   
+ 		</ul> 
+ 	</div> 
+ </form>

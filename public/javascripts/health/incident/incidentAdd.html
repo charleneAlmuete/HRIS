@@ -1,0 +1,82 @@
+<h4> Add Incidents/Accidents </h4><hr />
+<form class="form-horizontal">
+	<div class="col-lg-12">
+		<div class="form-group">
+			<label class="col-lg-5">Occurence</label>
+			<div class="col-lg-7">
+				<select class="form-control" ng-model="incident.occurence">
+					<option></option>
+					<option>Incident</option>
+					<option>Accident</option>
+				</select>
+			</div> 
+		</div>
+		<div class="form-group">
+			<label class="col-lg-5">Nature of Accident</label>
+			<div class="col-lg-7">
+				<input class="form-control" type="text" ng-model="incident.natureOfAccident"></input>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-5">Injury Type</label>
+			<div class="col-lg-7">
+				<input class="form-control" type="text" ng-model="incident.injuryType"></input>
+			</div> 
+		</div>
+		<div class="form-group">
+			<label class="col-lg-5">Core Activity</label>
+			<div class="col-lg-7">
+				<input class="form-control" type="text" ng-model="incident.coreActivity"></input>
+			</div> 
+		</div> 
+		<div class="form-group">
+			<label class="col-lg-5">Location</label>
+			<div class="col-lg-7">
+				<input class="form-control" type="text" ng-model="incident.location"></input>
+			</div> 
+		</div> 
+		<div class="form-group">
+			<label class="col-lg-5">Date of Occurence</label>
+			<div class="col-lg-7">
+				<div class="input-group" moment-picker="incident.dateOfOccurence" format="YYYY-MM-DD"> 
+					<input class="form-control" ng-model="incident.dateOfOccurence">
+					<span class="input-group-addon">
+						<i class="fa fa-calendar"></i>
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-5">Persons Involve</label>
+			<div class="col-lg-7">
+				<select class="selectpicker" multiple="multiple">
+					<option>Mustard</option>
+					<option>Ketchup</option>
+					<option>Relish</option>
+				</select> 
+			</div> 
+		</div>
+		<div class="form-group">
+			<label class="col-lg-5">Damaged Property</label>
+			<div class="col-lg-7">
+				<input class="form-control" type="text" ng-model="incident.damagedProperty"></input>
+			</div> 
+		</div>  
+		<div class="form-group">
+			<label class="col-lg-5">Details</label>
+			<div class="col-lg-7">
+				<textarea class="form-control" type="text" ng-model="incident.details"></textarea>
+			</div> 
+		</div> 
+	</div>
+	<div class="col-lg-12 pull-right">
+		<ul class="list-unstyled list-inline text-right"> 
+			<li ng-show="add">
+				<button type="button" class="btn btn-success btn-sm" ng-click="addIncident( incident )"> SAVE </button> 
+			</li>
+			<li ng-show="!add">
+				<button type="button" class="btn btn-success btn-sm" ng-click="updateIncident( incident )"> UPDATE </button>
+			</li> 
+		</ul>
+	</div>
+</form> 

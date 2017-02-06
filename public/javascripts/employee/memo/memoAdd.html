@@ -1,0 +1,111 @@
+<h4>Add Memo</h4><hr />
+<form class="form-horizontal" method = "POST">
+	<div class="col-lg-12"> 
+		<div class="form-group">
+			<label class="col-lg-4">Memo No.</label>
+			<div class="col-lg-8">
+				<input class="form-control" type="text" ng-model="violation.memoNo"></input>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-4">Subject Matter</label>
+			<div class="col-lg-8">
+				<input class="form-control" type="text" ng-model="violation.subject"></input>
+			</div>
+		</div>  
+
+		<div class="form-group">
+			<label class="col-lg-4">Date of Memo</label>
+			<div class="col-lg-8"> 
+				<div class="input-group" moment-picker="violation.dateOfMemo" format="YYYY-MM-DD"> 
+					<input class="form-control" ng-model="violation.dateOfMemo">
+					<span class="input-group-addon">
+						<i class="fa fa-calendar"></i>
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-4">Signed By</label>
+			<div class="col-lg-8">
+				<input class="form-control" type="text" ng-model="violation.signedBy"></input>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-4">No. of Offense</label>
+			<div class="col-lg-8">
+				<select class="form-control" ng-model="violation.noOfOffense">
+					<option></option>
+					<option>1st Offense</option>
+					<option>2nd Offense</option>
+					<option>3rd Offense</option>
+					<option>4th Offense</option>
+					<option>5th Offense</option>
+				</select>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-4">Category</label>
+			<div class="col-lg-8">
+				<select class="form-control" ng-model="violation.categoryOfOffense">
+					<option></option>
+					<option>Grave</option>
+					<option>2nd Degree</option>
+					<option>Minor</option> 
+				</select>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-4">Penalties</label>
+			<div class="col-lg-8">
+				<select class="form-control" ng-model="violation.penalties">
+					<option></option>
+					<option>Reprimand</option>
+					<option>Salary Deduction/Fines</option>
+					<option>Restitution</option> 
+					<option>Suspension</option> 
+					<option>Forcible Resignation</option>
+					<option>Dismissal</option>
+				</select>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class=" col-lg-4">Effects</label>
+			<div class="col-lg-8">
+				<select class="form-control" ng-model="violation.effectOnPenalties">
+					<option></option>
+					<option>No Promotion</option>
+					<option>No rating higher than satisfactory</option> 
+				</select>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-4">Effective Period</label>
+			<div class="col-lg-8">
+				<select class="form-control" ng-model="violation.effectivePeriod">
+					<option></option>
+					<option>6 months</option>
+					<option>12 months</option>
+					<option>24 months</option>  
+				</select>
+			</div>
+		</div>
+	</div> 
+	<div class="col-lg-12">
+		<div class="form-group">
+			<div class="col-lg-12" >
+				<textarea class="form-control" type="text" ng-model="violation.memo" placeholder="Write your memo here..."></textarea>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-12"> 
+		<ul class="list-unstyled list-inline pull-right"> 
+			<li ng-show="add">
+				<button type="button" class="btn btn-success btn-sm" ng-click="addViolation( violation )"> SAVE </button>
+			</li> 
+			<li ng-show="!add">
+				<button type="button" class="btn btn-success btn-sm" ng-click="updateViolation( violation )"> UPDATE </button>	 
+			</li>    
+		</ul>
+	</div> 
+</form>

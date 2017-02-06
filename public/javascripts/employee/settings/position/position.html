@@ -1,0 +1,81 @@
+<div class="col-lg-12">
+	<div class="col-lg-6 table-responsive" ng-show="positionHistory">
+		<h4> List of Positions
+			<ul class="list-unstyled list-inline pull-right">  
+				<li> 
+					<button class="btn btn-link" ng-click="addDialogPosition()"><span class="fa fa-plus"></span></button> 
+				</li>  
+			</ul> 
+		</h4><br />
+		<table class="table table-hover">
+			<thead class="table-header">
+				<tr>
+					<th style="display:none;">ID</th>
+					<th>Position</th>  
+					<th class="text-right">Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr dir-paginate= "position in positions|itemsPerPage:10">
+					<td style="display:none;"> {{ position.id }} </td>
+					<td> {{ position.name }} </td> 
+					<td class="text-right">
+						<a class="btn btn-default btn-sm" ng-click="editPosition( position )">
+							<i class="fa fa-pencil"></i>
+						</a>
+						<a class="btn btn-default btn-sm" ng-click="deletePositionType( position.id )">
+							<i class="fa fa-trash"></i>
+						</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<dir-pagination-controls
+			class="pull-right"
+			max-size="10"
+			direction-links="true"
+			boundary-links="true" >
+		</dir-pagination-controls>
+	</div>   
+	<div class="col-lg-6 table-responsive" ng-show="positionWithSkillsHistory">
+		<h4> List of Skills
+			<ul class="list-unstyled list-inline pull-right">  
+				<li> 
+					<button class="btn btn-link" ng-click="addDialogSkills()"><span class="fa fa-plus"></span></button> 
+				</li>  
+			</ul> 
+		</h4><br />
+		<table class="table table-hover">
+			<thead class="table-header">
+				<tr>
+					<th style="display:none;">ID</th>
+					<th>Position</th>  
+					<th>Skills</th>
+					<th class="text-right">Action</th> 
+				</tr>
+			</thead>
+			<tbody>
+				<tr dir-paginate= "positionWithSkill in positionWithSkills|itemsPerPage:10">
+					<td style="display:none;"> {{ positionWithSkill.id }} </td>
+					<td> {{ positionWithSkill.name }} </td>
+					<td> {{ positionWithSkill.skills }} </td>  
+					<td class="text-right">
+						<a class="btn btn-default btn-sm" ng-click="editPositionWithSkill( positionWithSkill )">
+							<i class="fa fa-pencil"></i>
+						</a>
+						<a class="btn btn-default btn-sm" ng-click="deletePositionWithSkill( positionWithSkill.id )">
+							<i class="fa fa-trash"></i>
+						</a>
+					</td> 
+				</tr>
+			</tbody>
+		</table>
+		<dir-pagination-controls
+			class="pull-right"
+			max-size="10"
+			direction-links="true"
+			boundary-links="true" >
+		</dir-pagination-controls>
+	</div>  
+</div>
+

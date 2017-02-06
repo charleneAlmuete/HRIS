@@ -1,0 +1,117 @@
+<div class="container-fluid">
+	<nav class="navbar navbar-default navbar-fixed-top main-navbar" role="navigation">    
+		<div class="navbar-header">
+			<button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button> 
+			<a class="navbar-brand"> 
+				<img class="img-responsive"  width="72" style="margin: 9px;" src="public/stylesheets/logo.png">
+			</a> 
+		</div>
+		<div id="navbarCollapse" class="collapse navbar-collapse navigation">
+			<ul class="nav nav-pills navbar-right"> 
+				<li class="dropdown hidden-xs hidden-sm" ng-repeat="employeeLogin in employees">
+					<a id="iconMenu" class="dropdown-toggle" data-toggle="dropdown" style="cursor:pointer;height:69px;padding-top:18px"> 
+						<img class="img-circle"  width="38" src="http://bootsnipp.com/img/avatars/ebeb306fd7ec11ab68cbcaa34282158bd80361a7.jpg">
+					</a>
+					<ul class="dropdown-menu">
+						<li>
+							<div class="navbar-login">
+								<div class="row">
+									<div class="col-lg-5"> 
+										<img class="img-circle" src="http://bootsnipp.com/img/avatars/ebeb306fd7ec11ab68cbcaa34282158bd80361a7.jpg" width="120">
+									</div>
+									<div class="col-lg-7">
+										<p class="text-left" ng-repeat="employeeLogin in employees">
+											{{ dateValue | date: 'shortDate' }} <br />
+											{{ employeeLogin.fName + ' ' + employeeLogin.mi + ' ' + employeeLogin.lName }} <br />
+											<small>
+												{{ employeeLogin.role }}<br />
+												{{ employeeLogin.position }}
+											</small>
+										</p> 
+									</div> 
+								</div>
+							</div>
+						</li>
+						<li class="divider"></li>
+						<li> 
+							<div class="col-lg-12 logout_li"> 
+								<button class="btn btn-info btn-block" ui-sref="login">Logout </button>  
+							</div>  
+						</li> 
+					</ul>  
+				</li>
+				<li class="hidden-lg hidden-md">
+					<a id="iconMenu" href="#/login" title="Logout">
+						<span class="glyphicon glyphicon-log-out fa-lg"> </span>
+					</a>
+				</li>  
+			</ul> 
+		</div> 
+	</nav>  
+</div>  
+<div id="wrapper"> 
+	<div id="sidebar-wrapper">
+		<ul class="sidebar-nav">  
+			<section class="menu"> 
+				<input class="form-control" ng-model="com.company_id" style="display:none"></input> 
+				<li>
+					<h5><small><b>USER NAVIGATION</b></small></h5><hr />
+				</li>
+				<li>
+					<a ui-sref="user.profile.personal"><i class="fa fa-user"></i> &nbsp; Profile</a> <br /> 
+				</li>  
+				<li ng-repeat="getRole in rolesId">
+					<a ui-sref="user.leave">
+						<i class="fa fa-calendar"></i> &nbsp; Leaves 
+						<span class="badge badge-default pull-right" ng-if="getRole.role_id == '6'">{{ leaves.leaveCount }}</span>
+					</a><br />  
+				</li>  
+				<li ng-repeat="getRole in rolesId">
+					<a ui-sref="user.overtime">
+						<i class="fa fa-clock-o fa-2x"></i> &nbsp; Overtime
+						<span class="badge badge-default pull-right" ng-if="getRole.role_id == '6'">{{ overtime.overtimeCount }}</span>
+					</a> <br />
+				</li>  
+				<li>
+					<a ui-sref="user.attendance"><i class="fa fa-check-square-o"></i> &nbsp; Attendance</a> <br /> 
+				</li> 
+				<li>
+					<a ui-sref="user.payslip"><i class="fa fa-file"></i> &nbsp; Payslip </a><br />
+				</li>  
+				<div ng-repeat="getRole in rolesId">  
+					<li ng-if="getRole.role_id == '5'">
+						<h5><small><b>ADMIN</b></small></h5><hr />
+					</li> 
+					<li ng-if="getRole.role_id == '5'">
+						<a ui-sref="user.ipaddress"><i class="fa fa-map-marker fa-2x"></i> &nbsp; IP Addresses</a> <br />
+					</li>  
+					<li ng-if="getRole.role_id == '5'">
+						<a ui-sref="user.userForm" ng-if="getRole.role_id == '5'"><i class="fa fa-user"></i> &nbsp; Users </a><br /> 
+					</li>
+				</div>   
+			</section> 
+		</ul> 
+	</div> 
+	<div id="nav_menu page-content-wrapper">   
+		<div class="container-fluid"> 
+			<div class="background-content">
+				<div class="container-fluid">
+					<ui-view></ui-view> 
+				</div>  
+			</div>
+		</div>
+	</div> 
+</div>
+
+
+
+
+
+
+
+

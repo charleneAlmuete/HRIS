@@ -1,0 +1,45 @@
+<h2>Renewal/Regularization</h2><br />
+<div class="row row-base">
+	<div class="form-group"> 
+		<div class="col-lg-3">
+			<div class="input-group"> 
+				<input type="text" class="form-control col-xs-12" placeholder="Search Company" ng-model="search.company"> 
+				<span class="input-group-addon"><i class="fa fa-search"></i> </span>
+			</div> 
+		</div>
+	</div>
+	<div class="col-lg-12"> <br />
+		<div class="table-responsive">
+			<table class="table table-hover">
+				<thead class="table-header">
+					<tr> 
+						<th style="display:none">Employee ID</th>
+						<th>Date Assigned</th>
+						<th class="text-left">Employee</th>  
+						<th class="text-left">Position</th> 
+						<th class="text-center">Company</th>
+						<th class="text-center">Location</th>  
+						<th class="hidden">Date Prompt</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr dir-paginate="renewalList in renewalLists|itemsPerPage:30|filter:search"> 
+						<td style="display:none"> {{renewalList.employee_id}} </td>
+						<td> {{renewalList.dateAssigned}} </td>
+						<td class="text-left"> {{renewalList.employee}} </td>  
+						<td class="text-left"> {{renewalList.position}} </td>
+						<td class="text-center"> {{renewalList.company}} </td>
+						<td class="text-center"> {{renewalList.location}} </td>  
+						<td class="hidden"> {{renewalList.datePrompt}} </td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<dir-pagination-controls
+			class="pull-right"
+			max-size="10"
+			direction-links="true"
+			boundary-links="true" >
+		</dir-pagination-controls>
+	</div> 
+</div>

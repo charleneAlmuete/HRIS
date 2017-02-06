@@ -1,0 +1,27 @@
+<h4>Bank Information</h4><hr /> 
+<form class="form-horizontal">
+	<div class="col-lg-12"> 
+		<div class="form-group">
+			<label class="col-lg-4">Bank</label>
+			<div class="col-lg-8">
+				<input class="form-control" type="text" ng-model="bank.bank"></input> 
+			</div> 
+		</div>
+		<div class="form-group">
+			<label class="col-lg-4">Account No</label>
+			<div class="col-lg-8">
+				<input class="form-control" type="text" ng-model="bank.accountNo"></input> 
+			</div> 
+		</div> 
+	</div>
+	<div class="col-lg-12 pull-right">
+		<ul class="list-unstyled list-inline text-right"> 
+			<li ng-show="add">
+				<button type="button" class="btn btn-success btn-sm" ng-click="addBank( bank )"> SAVE </button> 
+			</li>
+			<li ng-show="!add">
+				<button type="button" class="btn btn-success btn-sm" ng-click="updateBank( bank )"> UPDATE </button> 
+			</li> 
+		</ul>
+	</div>
+</form>

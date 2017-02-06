@@ -1,0 +1,39 @@
+<h4><b><u>Awards & Recognition
+	<button class="btn btn-link pull-right" ng-click="addDialogRecognition()"><i class="fa fa-plus"></i></button>  
+</b></u></h4><br />   
+<div class="col-lg-12">  
+	<div class="table-responsive"> 
+		<table class="table table-hover">
+			<thead class="table-header">
+				<tr>
+					<th style="display:none">ID</th>   
+					<th class="text-left">Award Given</th>
+					<th class="text-center">Citation</th>  
+					<th class="text-right">Action</th> 
+				</tr>
+			</thead>
+			<tbody>
+				<tr dir-paginate="recognition in recognitions|filter:search|itemsPerPage:15" >
+					<td style="display:none"> {{recognition.id}} </td>   
+					<td class="text-left"> {{recognition.awardGiven}} </td>
+					<td class="text-center"> {{recognition.citation}} </td>   
+					<td class="text-right">
+						<a class="btn btn-default btn-sm" ng-click="edit( recognition )">
+							<i class="fa fa-pencil"></i>
+						</a>
+						<a class="btn btn-default btn-sm" ng-click="deleteRecognition( recognition.id )">
+							<i class="fa fa-trash"></i>
+						</a>
+					</td> 
+				</tr>
+			</tbody>
+		</table>
+		<dir-pagination-controls
+			class="pull-right"
+			max-size="10"
+			direction-links="true"
+			boundary-links="true" >
+		</dir-pagination-controls>
+	</div>
+</div>
+

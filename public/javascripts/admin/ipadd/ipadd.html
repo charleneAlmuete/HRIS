@@ -1,0 +1,63 @@
+<div class="col-lg-12">
+<h2>List of IP Address</h2>  
+<h6>IP Addresses are the source from where the employees get login for their leave and overtime requests. This is to know if the employees logs within the boundary of the given area.</h6><br />
+</div>
+<div class="form-group">   	
+	<div class="col-lg-3">
+		<div class="input-group" moment-picker="startDate" format="YYYY-MM-DD"> 
+			<input class="form-control col-xs-12" placeholder="Start Date " ng-model="startDate">
+			<span class="input-group-addon">
+				<i class="fa fa-calendar"></i>
+			</span>
+		</div>
+	</div> 
+	<div class="col-lg-3">
+		<div class="input-group" moment-picker="endDate" format="YYYY-MM-DD"> 
+			<input class="form-control col-xs-12" placeholder="End Date " ng-model="endDate">
+			<span class="input-group-addon">
+				<i class="fa fa-calendar"></i>
+			</span>
+		</div>
+	</div> 
+	<div class="col-lg-3"> 
+		<div class="input-group"> 
+			<input type="text" class="form-control col-xs-12" placeholder="Search Employee" ng-model="search.employee"> 
+			<span class="input-group-addon"><i class="fa fa-search"></i> </span>
+		</div>  
+	</div>  
+</div> 
+<div class="col-lg-12"><br />
+	<div class="table-responsive">
+		<table class="table table-hover">
+			<thead style="background-color:#2A3F54;color:white">
+				<tr>
+					<th style="display:none">ID</th>
+					<th class="text-left">Employee</th>  
+					<th class="text-left">Request</th>
+					<th class="text-left">Date</th> 
+					<th class="text-center">Time</th>
+					<th class="text-center">IP Address</th>  
+					<th class="text-right">Status</th>  
+				</tr>
+			</thead>
+			<tbody>
+				<tr dir-paginate="attendance in attendances|itemsPerPage:15|filter:search " >
+					<td style="display:none"> {{ }} </td>
+					<td class="text-left"> {{ }} </td> 
+					<td class="text-left"> {{ }} </td>
+					<td class="text-left"> {{ }} </td> 
+					<td class="text-center"> {{ }} </td>
+					<td class="text-center"> {{ }} </td>  
+					<td class="text-right"> {{ }} </td> 
+				</tr>
+			</tbody>
+		</table>
+		<dir-pagination-controls
+			class="pull-right"
+			max-size="10"
+			direction-links="true"
+			boundary-links="true" >
+		</dir-pagination-controls>  
+	</div>
+</div>
+ 

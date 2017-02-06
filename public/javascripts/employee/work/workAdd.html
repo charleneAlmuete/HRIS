@@ -1,0 +1,72 @@
+<h4>Add Work Experience</h4><hr />
+<form class="form-horizontal" method="POST">
+	<div class="col-lg-12">
+		<div class="form-group">
+			<label class="col-lg-4">Position</label>
+			<div class="col-lg-8">
+				<input class="form-control" type="text" ng-model="work.position"></input>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-4">Company</label>
+			<div class="col-lg-8">
+				<input class="form-control" type="text" ng-model="work.company"></input>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-4">Status</label>
+			<div class="col-lg-8">
+				<select class="form-control" ng-model="work.empStatus">
+					<option></option>
+					<option>Permanent</option>
+					<option>Contractual</option>
+					<option>Job Order</option>
+				</select>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-4">Reason</label>
+			<div class="col-lg-8">
+				<textarea class="form-control" ng-model="work.reason"></textarea>
+			</div>
+		</div> 
+		<div class="form-group">
+			<label class="col-lg-4">From</label>
+			<div class="col-lg-8"> 
+				<div class="input-group" moment-picker="work.durFrom" format="YYYY-MM-DD"> 
+					<input class="form-control" ng-model="work.durFrom">
+					<span class="input-group-addon">
+						<i class="fa fa-calendar"></i>
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-4">To</label>
+			<div class="col-lg-8"> 
+				<div class="input-group" moment-picker="work.durTo" format="YYYY-MM-DD"> 
+					<input class="form-control" ng-model="work.durTo">
+					<span class="input-group-addon">
+						<i class="fa fa-calendar"></i>
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-4">Previous Salary</label>
+			<div class="col-lg-8">
+				<input class="form-control" type="text" ng-model="work.salary"></input>
+			</div>
+		</div>
+	</div> <br />
+	<div class="col-lg-12">
+		<ul class="list-unstyled list-inline pull-right">
+			<li ng-show="add">
+				<button type="button" class="btn btn-success btn-sm" ng-click="addWork( work )"> SAVE </button> 
+			</li> 
+			<li ng-show="!add">
+				<button type="button" class="btn btn-success btn-sm" ng-click="updateWork( work )"> UPDATE </button> 
+			</li>   
+		</ul>
+	</div>
+</form> 

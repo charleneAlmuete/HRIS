@@ -1,0 +1,57 @@
+<h4><b><u>Service Information</b></u></h4> 
+<form class="form-horizontal" method="POST"> 
+	<div ng-show="otherServices">
+		<div class="col-lg-4">
+			<h5><b><u>Leaves Information </b></u></h5><hr > 
+			<div class="col-lg-12 table-responsive" >
+				<table class="table table-hover">
+					<thead class="table-header"> 
+						<th class="col-lg-4"> Leaves </th>
+						<th class="col-lg-4 text-center"> Days </th> 
+					</thead>
+					<tbody> 
+						<tr ng-repeat="leaves in profLeavesShow">
+							<td class="col-lg-4"> {{ leaves.name }} </td>
+							<td class="col-lg-4 text-center"> {{ leaves.leavedays }} </td> 
+						</tr>
+					</tbody>
+				</table>
+			</div>  
+		</div>
+		<div class="col-lg-4"> 
+			<h5><b><u>Benefits/Incentives Information </b></u></h5><hr> 
+			<div class="col-lg-12 table-responsive">
+				<table class="table table-hover">
+					<thead class="table-header">
+						<th class="col-lg-4"> Type </th>
+						<th class="col-lg-4 text-center"> Amount </th> 
+					</thead>
+					<tbody> 
+						<tr ng-repeat="benefits in profBenefitsShow">
+							<td class="col-lg-4"> {{benefits.benefit}} </td>
+							<td class="col-lg-4 text-center"> {{benefits.amount}} </td> 
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div> 
+		<div class="col-lg-4"> 
+			<h5><b><u>Allowances Information </b></u></h5><hr> 
+			<div class="col-lg-12 table-responsive">
+				<table class="table table-hover">
+					<thead class="table-header">
+						<th class="col-lg-4"> Allowance </th>  
+						<th class="col-lg-4 text-center">Amount</th>  
+					</thead>
+					<tbody> 
+						<tr ng-repeat="allowances in profAllowancesShow">
+							<td style="display:none">{{allowances.id}} </td>
+							<td class="col-lg-4">{{allowances.name}} </td>
+							<td class="col-lg-4 text-center">{{allowances.amount}} </td>  
+						</tr>
+					</tbody>
+				</table>
+			</div> 
+		</div> 
+	</div> 
+</form> 

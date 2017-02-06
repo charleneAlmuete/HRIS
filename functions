@@ -1,0 +1,58 @@
+Company Manager ( User )
+-1st approval of Leaves from employees
+-Request Attendance Alteration (Approval)
+ 
+Admin:
+-Adding of Users
+	-Reset Password
+	-Reisgnation
+
+ <!-- Remaining  -->
+ 	-Make the page responsive
+ 	-image path
+ 	-remove the background color of image when click 
+ <!-- Remaining  -->
+
+HR Manager:
+-Leave History/Credits
+-Leave Application ------- For Approval
+-Employee Information
+-Job Vacancy/Entry
+-Violations
+-Loans History/Bank Information
+-Development Program
+-Training Development/Development Program
+-Health & Safety
+-Settings
+	-Resign Employee
+
+
+HR Associate:
+-Employee Information
+-Job Vacancy/Entry
+-Violations
+-Loans History/Bank Information
+-Development Program
+-Training Development/Development Program
+-Health & Safety
+-Settings
+-Leaves for Users
+
+
+Payroll Officer:
+-Pay and Benefits
+-Payslip
+-Leave History
+
+
+User:
+-Attendance
+-Leave Application
+	-Leave History Filled
+-Payslip
+-Profile
+
+ 
+
+
+

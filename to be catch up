@@ -1,0 +1,124 @@
+ADMIT CAN EDIT THE PASSWORD OF uSER
+
+Quit Claim(Last Pay)
+
+Overtime Filling
+
+Regular
+Flexible 1
+Flexible 2
+Flexible 3
+
+Employee Id autocomplete
+Employee Id leave application
+Match preferred skills in input job
+
+<!-- TIME -->
+<div class="input-group" moment-picker="shift.timein" format="HH:mm"> 
+	<input class="form-control" ng-model="shift.timein">
+	<span class="input-group-addon">
+		<i class="fa fa-clock-o"></i>
+	</span>
+</div>
+
+
+<!-- DATE -->
+<div class="input-group" moment-picker="overtime.dateRequested" format="YYYY-MM-DD"> 
+	<input class="form-control" ng-model="overtime.dateRequested">
+	<span class="input-group-addon">
+		<i class="fa fa-calendar"></i>
+	</span>
+</div>
+
+<!-- TO CLEAR INPUT TEXT IN ANGUCOMPLETE -->
+$scope.$broadcast('angucomplete-alt:clearInput');
+$state.go( $state.current, {}, { reload: true });
+
+
+<angucomplete-alt id="object"  
+    pause="100" 
+    selected-object="empId" 
+    local-data="employeeNames"
+    initial-value="employeeName"
+    search-fields="employee"  
+    title-field="employee"
+    minlength="1"
+    input-class="form-control form-control-small"
+    match-class="highlight">
+</angucomplete-alt>
+
+$scope.empId= function( selected )
+{  
+    console.log(selected.description.id)
+    $scope.overtime.employee_id= selected.description.id;  
+}
+
+$http.get( '/getAllEmployee') 
+    .success( function ( response ) 
+    {  
+        $scope.employeeNames= response;   
+    }) 
+
+data.dateFiled = $filter('date')(new Date(), 'yyyy/MM/dd'); 
+
+
+<!-- CONCERNS -->
+-What field that is required to fill in? 
+
+
+%Y-%m-%d
+rgb(204, 32, 19)
+ 
+User Status: (user table)
+-Active (When user changed the password)
+-Disable (Either of the 3 inactive)
+-New (When hr add employee)
+
+*role_id must be in users table
+
+Employment Status: (employees table)
+-Active
+-Terminated
+-Resigned
+-Suspended
+ 
+ 
+Admin
+-Allowed IP addresses(Add, Edit, Delete, Search)
+ 
+Skills multi-select
+Picture   
+
+THINGS To BE PRINTED:
+-Employee Information (individual/all)
+-Job Vacancies
+-Payslip
+
+
+range date memo  
+add delete in every table
+ 
+PENDING:
+-Print Employees (Individual) PDF
+-Checklist 
+-Image
+-Date range
+
+
+
+-Upload Timesheet
+--Map & Unmap Employee Details especially matching biometric  
+-File of Attendance Alteration
+--Should approve by manager
+--Update the time requested for alter
+
+ 
+-SSS no
+-TIN 
+-employment status 
+-data confirm
+-training no data
+-job view no data
+-time today
+-clear the table in compensation ... show when search
+

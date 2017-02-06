@@ -1,0 +1,41 @@
+<div class=" col-lg-12 table-responsive"> 
+	<h4> List of Lending Companies
+		<ul class="list-unstyled list-inline pull-right">  
+			<li> 
+				<button class="btn btn-link" ng-click="addDialogLending()"><span class="fa fa-plus"></span></button> 
+			</li>  
+		</ul> 
+	</h4><br />
+	<table class="table table-hover">
+		<thead class="table-header"> 
+			<tr> 
+				<th style="display:none"> ID </th>
+				<th>Lending</th> 
+				<th class="text-right">Action</th> 
+			</tr>
+		</thead>
+		<tbody>
+			<tr dir-paginate= "lending in lendings|filter:search|itemsPerPage:15">  
+				<td style="display:none"> {{ lending.id }} </td> 
+				<td> {{ lending.name }} </td>  
+				<td class="text-right">
+					<a class="btn btn-default btn-sm" title="Edit" ng-click="edit( lending )">
+						<i class="fa fa-pencil"></i>
+					</a> 
+					<a class="btn btn-default btn-sm" title="Edit" ng-click="deleteLending( lending.id )">
+						<i class="fa fa-trash"></i>
+					</a> 
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<dir-pagination-controls
+class="pull-right"
+max-size="10"
+direction-links="true"
+boundary-links="true" >
+</dir-pagination-controls>  
+</div>  
+
+

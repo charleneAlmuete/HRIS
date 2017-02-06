@@ -1,0 +1,70 @@
+<h2>List of Jobs</h2>
+<p>Here are the list of jobs that can be used as a reference by HR in posting company's available jobs and by altering into unavailable if the position is already taken.</p><br />  
+<div class="row row-base">
+	<div class="form-group">  
+		<div class="pull-right" style="margin-right:5px">
+			<a class="btn btn-link" ng-click="jobDialog()"><i class="fa fa-plus"></i></a> 
+		</div>  
+		<div class="col-lg-3">
+			<select class="form-control" ng-model="search.status">  
+				<option value="" ng-model="search">Select Status</option>
+				<option value="Available">Available</option>
+				<option value="Not Available">Not Available</option> 
+			</select> 
+		</div> 
+	</div>
+	<div class="col-lg-12"><br />
+		<div class="table-responsive">
+			<table class="table table-hover">
+				<thead class="table-header">
+					<tr>
+						<th style="display:none">ID</th>
+						<th>Date Effective</th>
+						<th>Job Title</th>
+						<th>Company</th>
+						<th>Branch</th>
+						<th>Employment Status</th> 
+						<th>Qualification</th>
+						<th class="text-center">Status</th>
+						<th class="text-right">Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr dir-paginate="job in jobs|filter:search|itemsPerPage:10" >
+						<td style="display:none"> {{job.id}} </td>
+						<td> {{job.dateFiled}} </td>
+						<td> {{job.position}} </td>
+						<td> {{job.company}} </td>
+						<td> {{job.branch}} </td>
+						<td> {{job.empStatus}} </td> 
+						<td> {{job.qualification}} </td>
+						<td class="text-center">
+							<span class="label label-green" ng-if="job.status == 'Available' "> {{job.status}} </span>
+							<span class="label label-gray" ng-if="job.status == 'Not Available' "> {{job.status}} </span>
+						</td> 
+						<td class="text-right">
+							<a class="btn btn-default btn-sm" title="Edit" ng-click="edit( job )">
+								<i class="fa fa-pencil"></i>
+							</a>
+							<a class="btn btn-default btn-sm" title="Not Available" ng-click="unavailable( job )" ng-if="job.status == 'Available' ">
+								<i class="fa fa-ban"></i>
+							</a>
+							<a class="btn btn-default btn-sm" title="Available" ng-click="available( job )" ng-if="job.status == 'Not Available' ">
+								<i class="fa fa-check"></i>
+							</a>
+							<a class="btn btn-default btn-sm" title="Delete" ng-click="deleteJobs( job.id )">
+								<i class="fa fa-trash"></i>
+							</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<dir-pagination-controls
+				class="pull-right"
+				max-size="10"
+				direction-links="true"
+				boundary-links="true" >
+			</dir-pagination-controls>
+		</div> 
+	</div>
+</div>

@@ -1,0 +1,82 @@
+<h2>Leave Application </h2> 
+<p>These are the employees who applied for leave and has their current status shown. Some are pending and must be approved by HR when the status <i>"Approved by Manager"</i> is labeled. </p><br />  	
+<div class="row row-base"> 
+	<div class="form-group">   
+		<div class="col-lg-3"> 
+			<div class="input-group"> 
+				<input type="text" class="form-control col-xs-12" placeholder="Search Employee" ng-model="search.employee"> 
+				<span class="input-group-addon"><i class="fa fa-search"></i> </span>
+			</div> 
+		</div>   
+		<div class="col-lg-3">
+			<select class="form-control" ng-model="search.status"> 
+				<option value="" ng-model="search">Select Status</option> 
+				<option value="Approved by HR">Approved by HR</option>
+				<option value="Dissaproved by HR">Dissaproved by HR</option>
+				<option value="For Manager Approval">For Manager Approval</option> 
+				<option value="Approved by Manager">Approved by Manager</option> 
+				<option value="Dissaproved by Manager">Dissaproved by Manager</option>
+			</select>
+		</div>  
+		<div class="col-lg-6">
+			<button class="btn btn-link pull-right" ng-click="addLeave()"><span class="fa fa-plus"></span></button> 
+		</div>  
+	</div> 
+	<div class="col-lg-12"><br />
+		<div class="table-responsive">
+			<table class="table table-hover">
+				<thead class="table-header">
+					<tr>
+						<th style="display:none">ID</th>  
+						<th>Date Filed</th>
+						<th class="text-center">Employee</th>
+						<th class="text-center">Leave Type</th> 
+						<th class="text-center">From</th>
+						<th class="text-center">To</th> 
+						<th class="text-center">Day(s)</th>
+						<th class="text-center">Mode</th> 
+						<th class="text-center">Status</th> 
+						<th class="text-right">Action</th> 
+					</tr>
+				</thead>
+				<tbody>
+					<tr dir-paginate="leaveApp in leaveApps|itemsPerPage:15|filter:search " >
+						<td style="display:none"> {{leaveApp.id}} </td> 
+						<td> {{leaveApp.dateFiled}} </td>
+						<td class="text-center"> {{leaveApp.employee}} </td>
+						<td class="text-center"> {{leaveApp.name}} </td> 
+						<td class="text-center"> {{leaveApp.durFrom}} </td>
+						<td class="text-center"> {{leaveApp.durTo}} </td> 
+						<td class="text-center"> {{leaveApp.days_applied}} </td> 
+						<td class="text-center"> {{leaveApp.mode}} </td> 
+						<td class="text-center" ng-if="leaveApp.status == 'Approved by Manager' "><span class="label label-green"> {{leaveApp.status}} </span></td> 
+						<td class="text-center" ng-if="leaveApp.status == 'Dissaproved by Manager' "><span class="label label-gray"> {{leaveApp.status}} </span></td>  
+						<td class="text-center" ng-if="leaveApp.status == 'Approved by HR' "><span class="label label-violet"> {{leaveApp.status}} </span></td>
+						<td class="text-center" ng-if="leaveApp.status == 'Dissaproved by HR' "><span class="label label-gray"> {{leaveApp.status}} </span></td>
+						<td class="text-center" ng-if="leaveApp.status == 'For Manager Approval' "><span class="label label-brown"> {{leaveApp.status}} </span></td>
+						<td class="text-right"> 
+							<a class="btn btn-default btn-sm" title="Approve" ng-click="approveLeave( leaveApp )" ng-if="leaveApp.status == 'For HR Approval' || leaveApp.status == 'Approved by Manager' ">
+								<i class="fa fa-thumbs-o-up"></i>
+							</a>
+							<a class="btn btn-default btn-sm" title="Dissaprove" ng-click="declineLeave( leaveApp )" ng-if="leaveApp.status == 'For HR Approval' || leaveApp.status == 'Approved by Manager' ">
+								<i class="fa fa-thumbs-o-down"></i>
+							</a>
+							<a class="btn btn-default btn-sm" title="Edit" ng-click="editLeave( leaveApp )" ng-if="leaveApp.status == 'For Manager Approval'"> 
+								<i class="fa fa-pencil"></i>
+							</a> 
+							<a class="btn btn-default btn-sm" title="Cancel" ng-click="delete( leaveApp.id )" >
+								<i class="fa fa-times"></i>
+							</a>  
+						</td> 
+					</tr>
+				</tbody>
+			</table>
+			<dir-pagination-controls
+				class="pull-right"
+				max-size="10"
+				direction-links="true"
+				boundary-links="true" >
+			</dir-pagination-controls>  
+		</div>
+	</div>
+</div>

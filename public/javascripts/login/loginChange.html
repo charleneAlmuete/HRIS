@@ -1,0 +1,37 @@
+<h4>Change Password</h4> <hr />
+<form class="form-horizontal" method="POST"> 
+	<div class="col-lg-12">
+		<div class="form-group">
+			<p style="color:red" ng-show="notifFailed">Please make sure your new password and confirm password are the same.</p> 
+			<p style="color:green" ng-show="notifSuccess">Your password has been changed successfully, please try to login.</p> 
+		</div>     
+		<div class="form-group" style="display:none;">
+			<label class="col-lg-5">Username</label>
+			<div class="col-lg-7">
+				<input class="form-control" type="text" ng-model="changePass.id" disabled></input>   
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-5">New Password</label>
+			<div class="col-lg-7">
+				<input class="form-control" type="password" ng-model="changePass.password"></input>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-5">Confirm Password</label>
+			<div class="col-lg-7">
+				<input class="form-control" type="password" ng-model="confirm"></input> 
+			</div>
+		</div> 
+	</div> 
+	<div class="col-lg-12"> 
+		<ul class="list-unstyled list-inline pull-right"> 
+			<li>	
+				<button type="button" class="btn btn-info" ng-click="addUser( changePass )"> Change </button>  
+			</li>  
+			<li>
+				<button type="button" class="btn btn-default" ng-click="closeAll( )"> Close </button>
+			</li>  
+		</ul> 
+	</div>
+</form> 

@@ -1,0 +1,75 @@
+<h2>Overtime Application </h2> 
+<p>These are the employees who applied for overtime and has their current status shown. Some are pending and must be approved by HR when the status <i>"Approved by Manager"</i> is labeled. </p><br />
+<div class="row row-base">
+	<div class="form-group">    
+		<div class="col-lg-3"> 
+			<div class="input-group"> 
+				<input type="text" class="form-control col-xs-12" placeholder="Search Employee" ng-model="search.employee"> 
+				<span class="input-group-addon"><i class="fa fa-search"></i> </span>
+			</div> 
+		</div>   
+		<div class="col-lg-3">
+			<select class="form-control" ng-model="search.status"> 
+				<option value="" ng-model="search">Select Status</option> 
+				<option value="Approved by HR">Approved by HR</option>
+				<option value="Dissaproved by HR">Dissaproved by HR</option>
+				<option value="For Manager Approval">For Manager Approval</option> 
+				<option value="Approved by Manager">Approved by Manager</option> 
+				<option value="Dissaproved by Manager">Dissaproved by Manager</option>
+			</select>
+		</div>   
+		<div class="col-lg-6">
+			<button class="btn btn-link pull-right" ng-click="addDialogOvertime()"><span class="fa fa-plus"></span></button> 
+		</div>  
+	</div>
+	<div class="col-lg-12"><br />
+		<div class="table-responsive">
+			<table class="table table-hover">
+				<thead class="table-header">
+					<tr>
+						<th style="display:none">ID</th>  
+						<th>Date Filed</th>
+						<th class="text-left">Employee</th>
+						<th class="text-left">Date Requested</th> 
+						<th class="text-center">Total Hours</th>
+						<th style="display:none">Reason</th> 
+						<th class="text-center">Status</th> 
+						<th class="text-right">Action</th> 
+					</tr>
+				</thead>
+				<tbody>
+					<tr dir-paginate="overtime in overtimes|itemsPerPage:15|filter:search " >
+						<td style="display:none"> {{overtime.id}} </td> 
+						<td> {{overtime.dateFiled}} </td>
+						<td class="text-left"> {{overtime.employee}} </td>
+						<td class="text-left"> {{overtime.dateRequested}} </td> 
+						<td class="text-center"> {{overtime.totalHours}} </td>
+						<td style="display:none"> {{overtime.reason}} </td> 
+						<td class="text-center" ng-if="overtime.status == 'Approved by Manager' "><span class="label label-green"> {{overtime.status}} </span></td> 
+						<td class="text-center" ng-if="overtime.status == 'Dissaproved by Manager' "><span class="label label-gray"> {{overtime.status}} </span></td>  
+						<td class="text-center" ng-if="overtime.status == 'Approved by HR' "><span class="label label-violet"> {{overtime.status}} </span></td>
+						<td class="text-center" ng-if="overtime.status == 'Dissaproved by HR' "><span class="label label-gray"> {{overtime.status}} </span></td>
+						<td class="text-center" ng-if="overtime.status == 'For Manager Approval' "><span class="label label-brown"> {{overtime.status}} </span></td>
+						<td class="text-right">  
+							<a class="btn btn-default btn-sm" title="Approve" ng-click="approveOvertime( overtime )" ng-if="overtime.status == 'For HR Approval' || overtime.status == 'Approved by Manager' ">
+								<i class="fa fa-thumbs-o-up"></i>
+							</a>
+							<a class="btn btn-default btn-sm" title="Dissaprove" ng-click="declineOvertime( overtime )" ng-if="overtime.status == 'For HR Approval' || overtime.status == 'Approved by Manager' ">
+								<i class="fa fa-thumbs-o-down"></i>
+							</a> 
+							<a class="btn btn-default btn-sm" title="Cancel" ng-click="delete( overtime.id )"  >
+								<i class="fa fa-times"></i>
+							</a> 
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<dir-pagination-controls
+			class="pull-right"
+			max-size="10"
+			direction-links="true"
+			boundary-links="true" >
+		</dir-pagination-controls>  
+	</div>
+</div>
+

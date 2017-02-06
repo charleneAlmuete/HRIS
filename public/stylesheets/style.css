@@ -1,0 +1,658 @@
+  
+body,html {  
+    position:absolute;  
+    width: 100%;
+    background: #E9EBEE; 
+    font-size:12px;  
+    padding-top:30px; 
+    font-family: 'Open Sans';  
+}  
+
+label span{
+    color:#D23531;
+}
+
+label{
+    top:8px;
+}
+
+.form-control{
+    border-radius:0;
+}
+ 
+.active {
+    background-color : transparent;
+    border-radius: 0;  
+}
+
+.activeNav.selected, 
+.activeNav.selected a,
+.activeNav.selected a:focus {
+    background-color : #16A085;  
+    color:white;
+}
+
+.activeSubNav.selected .btn {
+    background-color : transparent; 
+    color: #336E7B; 
+    border: transparent;
+}
+
+.navigation > ul > li.active > a > span.badge-danger {
+    background-color : transparent;
+    border-radius: 0;  
+    color:#fff;
+}
+
+.active > #iconMenu > .fa{
+    color : #04c9a9;
+    border-radius: 0;  
+}
+ 
+#iconMenu {
+    padding:26px; 
+    background-color:transparent;  
+} 
+
+#iconMenu:hover, #iconMenu:focus{
+    background-color:transparent;  
+    border-radius: 0; 
+    color:#25313F; 
+}
+
+#navbarCollapse  li  a{
+    color:#fff;
+}
+
+#navbarCollapse  li  a:hover{
+    color:#03c9a9; 
+}
+
+.thumb{
+    width:100%;
+    height:100%;
+}
+ 
+.spanMenuIcon{
+    color:white;
+    font-family: 'Open Sans';
+}
+
+.nav-stacked  li  a{
+    color:white;
+}
+
+.header_row_top{
+    border: 3px solid;
+    color:#05AD97; 
+    margin-top:-24px;  
+    max-width:100%; 
+}
+
+.background-content{
+    background-color: #E9EBEE;
+    margin-top: 2%;
+    padding-bottom: 2%;
+}
+  
+.btn-primary, .btn-primary:focus, a:active{
+    background:#336E7B none repeat scroll 0 0;
+}
+
+.btn-primary:hover{
+    background:transparent;
+    color:#2A3F54;  
+}     
+
+.btn-success:hover{
+    background:transparent;
+    color:#2A3F54;  
+} 
+
+.btn-success{
+    background-color:#79A888;
+    border-color:#487153;   
+} 
+
+.btn-info:hover{
+    background:transparent;
+    color:#2A3F54;  
+} 
+
+.btn-close:hover{
+    background:transparent; 
+    border-color:#000033;
+    color:black;  
+} 
+
+.btn-close{
+    background:#5D6D7E;
+    border-color:#34495E; 
+    color:#fff; 
+} 
+
+.btn-danger:hover{
+    background:transparent;
+    color:#2A3F54;  
+} 
+
+.btn-default:hover{
+    background:transparent;
+    color:#2A3F54;  
+} 
+
+.btn-link{
+    color:black;
+}
+
+.label-violet{
+    background-color:#982AD0;
+}
+
+.label-brown{
+    background-color:#B19328;
+}
+
+.label-green{
+    background-color:#81CACA;
+}
+
+.label-gray{
+    background-color:#CCC;
+}
+
+.main-navbar {
+    background-color:#21353f;
+    /*background-image: url("navbar-default.png"); 
+    background-repeat: repeat-x;*/
+    border-bottom-color: #03C9A9;
+    border-bottom-width: 5px;
+    border-radius: 0; 
+    /*margin: -23px 0;*/
+}
+
+.hr {
+    background: url("hr2.jpg"); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: auto;
+    position:fixed;
+    top:0;
+    left:0; 
+    bottom:0;
+    min-height: 100%;
+    min-width: 100%;
+    margin-top:-60px;
+    padding: 200px 30px 0 36px;
+
+}
+
+.footer {
+  background-color: #25313F;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 8%;
+  width: 100%;
+  overflow: auto;
+  opacity: 0.87;
+}
+
+.footer > p {
+    color:white;
+    padding:2%;
+}
+
+.table-header{
+    background-color:#16A085;
+    color:#fff;
+}
+
+.employee-navbar{
+    background-color: #fff;
+    border-bottom: 12px solid;
+    border-bottom-color: #fff;
+    box-shadow: 0px 1px 3px 1px grey;  
+}
+
+.employee-navbar a{
+    color:#336E7B;
+    font-size:14px;
+    font-weight: bold;
+}
+  
+.employee-navbar li a:hover {
+    background-color: #336E7B; 
+    color:white;
+} 
+
+.myAccordion{
+    margin-bottom:0;
+    border:0;
+    border-radius:0;
+    box-shadow:0px 0px 0px 0px transparent;
+}
+
+.settings-nav a{
+    color:#16A085;
+}
+
+.nav-separator{ 
+    border-radius:5px 5px 0px 0px;
+    border:1px solid #336E7B; 
+}
+ 
+.separator-radius{
+    border-right:1px solid #336E7B; 
+} 
+
+/* ******************** Admin Layout ******************** */
+
+.navbar-brand {
+    font-size:17px;  
+    font-weight:bold; 
+    padding:0;
+} 
+
+.navbar-brand > p {
+    color:#05AD97;
+} 
+
+.navbar-nav > li > span,p {
+    color:black; 
+}
+
+.badge-danger{
+    background-color:transparent; 
+    position: absolute;
+    top: 17px;
+    padding-left: 20px; 
+} 
+
+.badge-danger:hover, .badge-danger:focus{
+    background-color:transparent; 
+    position: absolute;
+    top: 17px;
+    padding-left: 20px; 
+}  
+ 
+.badge-default{
+    margin-right:15px;
+}
+
+/* ******************** Login Navbar ******************** */
+ 
+.navbar-login
+{
+    width: 305px;
+    padding: 10px;
+    padding-bottom: 0px;
+}
+
+.logout_li{
+    padding:10px; 
+}
+
+
+/* ******************** Toggle Styles ******************** */
+
+#wrapper {
+    padding-left: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled {
+    padding-left: 250px;
+}
+
+#sidebar-wrapper {      
+    z-index: 1000;
+    position: fixed;
+    left: 250px;
+    /*top:70px; */
+    width: 0;
+    height: 100%;
+    margin-left: -250px;
+    overflow-y: auto;
+    background-color: white;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    width: 250px;
+}
+
+#sidebar-wrapper .fa{
+    color:#16A085; 
+}
+
+#page-content-wrapper {
+    width: 100%;
+    position: absolute;
+    padding: 2%;
+    margin-top: -4%;
+}
+
+#wrapper.toggled #page-content-wrapper {
+    position: absolute;
+    margin-right: -250px;
+}
+
+/* ******************** GEN Styles ******************** */
+
+.profile-panel{
+    background-color:#42526C;
+    color:white
+}
+
+#employee-menu {
+    padding-left: 30px;
+    background-color: #2C3B41;
+    font-size: 12px;
+}
+
+#contact-list {
+    padding-left: 30px;
+}
+
+.img-circle.profile_img {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid rgba(52, 73, 94, 0.44);
+    margin-left: 6%;
+    margin-top: 6%;
+    padding-top: 9%;
+    padding-left: 9%;
+    position: inherit;
+}
+
+#nav_menu {
+    margin: 10px 30px;
+}
+
+.profile {
+    height: 90px;
+    color: white;
+    background-color: #172D44;
+} 
+
+.menu {
+    padding-top: 20px; 
+    margin-bottom:60px;
+    /*margin: 0 0 100px; */ 
+}
+
+.position {
+    margin-top: -20px;
+    margin-left: 25px;
+}
+
+.table-bordered > thead > tr > th:last-of-type {
+    text-align:center;
+    width: 100px;
+}
+
+li.header {
+    background: #25313F;
+    color: #4b646f;
+    font-size: 11px;
+}  
+ 
+
+
+/* ******************** ADD EMPLOYEE ******************** */
+
+.process-step .btn:focus {
+    outline:none;
+}
+
+.process {
+    display:table;
+    width:100%;
+    position:relative;
+    border-radius: 15px 15px 0 0;
+    background-color:#fff; 
+    border:1px solid;
+    padding:10px 0 10px 0;
+    box-shadow: 0px 1px 3px 1px gray;
+    margin-top:30px;
+}
+
+.process-row {
+    display:table-row;
+}
+
+.process-step button[disabled] {
+    opacity:1 !important;
+    filter: alpha(opacity=100) !important
+}
+
+.process-row:before {
+    bottom: 0;
+    content: " ";
+    height: 1px;
+    position: absolute;
+    top: 20px;
+    width: 100%;
+}
+
+.process-step {
+    display:table-cell;
+    text-align:center;
+    position:relative
+}
+
+.process-step p {
+    margin-top:4px
+}
+
+.btn-circle {
+    /*width:50px;
+    height:45px;*/
+    text-align:center;
+    font-size:8px;
+    /*border-radius:50%;*/
+    background-color:#336E7B;
+    color:#fff;
+
+} 
+
+#show-on-hover:hover > ul.dropdown-menu {
+    display: block;    
+}
+
+/* ******************** NG-DIALOG ******************** */
+
+.ngdialog.ngdialog-theme-plain.custom-width .ngdialog-content  {
+    /*min-height:500px;
+    height:auto !important; 
+    border-radius: 8px !important;
+    
+    position:relative;  
+    top: 50%; 
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-top: -320px;*/
+
+    border-radius: 5px;
+    position: absolute;
+    /*top: 100px;
+    bottom: 100px;*/
+    left: 0;
+    right: 0; 
+    overflow: auto;   
+}
+
+.ngdialog.customized .ngdialog-content {
+    background: #fff none repeat scroll 0 0;
+    color: #444;
+    font-family: "Helvetica Neue",sans-serif;
+    font-size: 1.1em;
+    line-height: 1.5em;
+    margin: 0 auto;
+    max-width: 100%;
+    padding: 1em;
+    position: relative;
+    width: 800px;
+}
+
+
+.navtop{ 
+    /*border: solid 1px #2a3f54; */
+    background-color:#fff;
+    box-shadow: 0px 1px 3px 1px gray;
+}
+
+.nav-modal > li > a {
+    color: black;
+    font-weight:bold;
+}
+
+.nav-modal > li > a:hover, a.active {
+    background-color: #337AB7; 
+    color:white;
+}
+ 
+
+    /* ******************** MENU IN SERVICE PAGE ******************** */
+
+    .breadcrumb li a {
+        text-decoration:none;  
+    }
+
+    .breadcrumb li a:active {
+        text-decoration:none;   
+    }
+
+    .breadcrumb li a:hover {
+        padding:10px;
+        color:white;
+        background: #337AB7;
+        border-radius: 8px !important;
+    }
+
+    /* ******************** TABLE APPEAR WHEN EDIT ******************** */
+
+/*#educationInfo, #awardsInfo, #examInfo,
+#workInfo, #skillsInfo, #organizationInfo,
+#trainingInfo, #medicalInfo, #serviceInfo, 
+#medicalInfo {
+    position:absolute;
+    left:0;
+    margin:0;
+    width:100%;
+} 
+*/
+/* ******************** Sidebar Styles ******************* */
+
+.sidebar-nav { 
+    position: absolute;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 100%; 
+
+}
+
+.sidebar-nav li {
+    text-indent: 12px;
+    line-height: 20px;
+}
+
+.sidebar-nav  li a {
+    display: block;
+    text-decoration: none;
+    color: #224761;  
+    padding:5px;
+    left:40px;
+}
+
+.sidebar-nav i {
+    font-size: 18px; 
+}
+ 
+
+.sidebar-nav li a:hover {
+    text-decoration: none; 
+    background: #336E7B;  
+    color: white;
+    font-weight:bold; 
+} 
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+    text-decoration: none;
+}
+
+.sidebar-nav > .header {
+    height: 35px;
+    font-size: 18px;
+    line-height: 60px;
+}
+
+.sidebar-nav >  a, .liColor {
+    color: white;
+    font-weight:bold;
+}
+
+.sidebar-nav >  a:hover {
+    color: #fff;
+    background: none;
+}
+
+.header{ 
+    background-color:#25313F;
+    color:white;
+}
+
+.header > .loginForm {
+    opacity: 0.80;
+}
+
+.navbar-right{
+    margin-right: 10px;
+}
+
+
+ .row-base{
+    background-color:#fff;
+    padding:20px;
+    box-shadow: 0px 1px 3px 1px gray; 
+    bottom:100px;
+ }
+
+@media(min-width:768px) {
+    #wrapper {
+        padding-left: 250px;
+    }
+
+    #wrapper.toggled {
+        padding-left: 0;
+    }
+
+    #sidebar-wrapper {
+        width: 240px;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        width: 0;
+    }
+
+    #page-content-wrapper {
+        position: relative;
+    }
+
+    #wrapper.toggled #page-content-wrapper {
+        position: relative;
+        margin-right: 0;
+    }
+}

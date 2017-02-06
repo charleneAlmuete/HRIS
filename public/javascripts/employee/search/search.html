@@ -1,0 +1,68 @@
+<h2>List of Employees </h2>
+<p>To search for an employee just fill in any of the filters given. </p><br />
+<div class="row row-base">
+	<div class="form-group">   
+		
+		<div class="col-lg-3">
+			<div class="input-group"> 
+				<input type="text" class="form-control col-xs-12" placeholder="Search Employee" ng-model="search.employee"> 
+				<span class="input-group-addon"><i class="fa fa-search"></i> </span>
+			</div> 
+		</div>
+		<div class="col-lg-3">
+			<select class="form-control" ng-model="search.code">
+				<option value="" ng-model="search">Select Company</option>
+				<option ng-repeat="company in companys" value="{{company.code}}">{{company.code}}</option>
+			</select>  
+		</div>
+		<div class="col-lg-3">
+			<select class="form-control" ng-model="search.employmentStatus"> 
+				<option value="">Select Status</option> 
+				<option value="Trainee">Trainee</option>
+				<option value="Probitionary">Probitionary</option> 
+				<option value="Regular">Regular</option> 
+			</select> 
+		</div>
+		<div class="col-lg-3">
+			<a class="btn btn-link pull-right" ui-sref="main.menuNav.personal({ empId: 0 })"><i class="fa fa-plus"></i></a>
+		</div>  
+	</div> 
+	<div class="col-lg-12"><br />
+		<div class="table-responsive">
+			<table class="table table-hover">
+				<thead class="table-header">
+					<tr>
+						<th>Name</th>
+						<th class="text-center">Date Hired</th>
+						<th class="text-left">Position</th>
+						<th class="text-left">Company</th>
+						<th class="text-left">Branch</th>
+						<th class="text-left">Status</th>
+						<th class="text-right">Action</th>
+					</tr>
+				</thead>
+				<tbody ng-if="search.employee || search.code || search.employmentStatus">
+					<tr dir-paginate= "worker in employee|filter:search|itemsPerPage:15">
+						<td> {{ worker.employee }} </td> 
+						<td class="text-center"> {{ worker.dateHired }} </td>
+						<td class="text-left"> {{ worker.position }} </td>
+						<td class="text-left"> {{ worker.company }} </td>
+						<td class="text-left"> {{ worker.branch }} </td>
+						<td class="text-left"> {{ worker.employmentStatus }} </td>
+						<td class="text-right">
+							<a class="btn btn-default btn-sm" title="View" ui-sref="main.menuNav.personal({empId: worker.id}) ">
+								<i class="fa fa-eye"></i>
+							</a> 
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<dir-pagination-controls
+			class="pull-right"
+			max-size="5"
+			direction-links="true"
+			boundary-links="true" >
+		</dir-pagination-controls>
+	</div> 
+</div>

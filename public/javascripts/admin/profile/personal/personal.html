@@ -1,0 +1,148 @@
+<h4><b><u>Personal Information</b></u> </h4><br />
+<form class="form-horizontal" > 
+    <div class="col-lg-4">   
+        <div class="form-group " >
+            <label class="col-lg-4">Biometric ID<span>*</span></label>
+            <div class="col-lg-8">
+                <input class="form-control" type="text" name="biometric" ng-model="profPersonal.biometric_id" disabled></input>  
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-4">Salary</label>
+            <div class="col-lg-8"> 
+                <input class="form-control" type="text" step="0.00" ng-model="profPersonal.salary" disabled></input> 
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-4">SSS</label>
+            <div class="col-lg-8">
+                <input class="form-control" type="text" ng-model="profPersonal.sss" disabled></input>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-4">PHIC</label>
+            <div class="col-lg-8">
+                <input class="form-control" type="text" ng-model="profPersonal.phic" disabled></input>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-4">HDMF</label>
+            <div class="col-lg-8">
+                <input class="form-control" type="text" ng-model="profPersonal.hdmf" disabled></input>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-4">Witholding Tax</label>
+            <div class="col-lg-8">
+                <input class="form-control" type="text" ng-model="profPersonal.tax" disabled></input>
+            </div>
+        </div>  
+    </div>
+    <div class="col-lg-4"> 
+        <div class="form-group">
+            <label class="col-lg-4">Date of Birth</label>
+            <div class="col-lg-8">
+                <div class="input-group" moment-picker="profPersonal.dateBirth" format="YYYY-MM-DD"> 
+                    <input class="form-control" ng-model="profPersonal.dateBirth" disabled>
+                    <span class="input-group-addon">
+                        <i class="fa fa-calendar"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-4">Place of Birth</label>
+            <div class="col-lg-8">
+                <input class="form-control" type="text" ng-model="profPersonal.placeBirth" disabled></input>
+            </div>
+        </div> 
+        <div class="form-group">
+            <label class="col-lg-4">Gender</label>
+            <div class="col-lg-8">
+                <select class="form-control" ng-model="profPersonal.gender" disabled>
+                    <option></option>
+                    <option>Male</option>
+                    <option>Female</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-4">Civil Status</label>
+            <div class="col-lg-8">
+                <select class="form-control" ng-model="profPersonal.civilStatus" disabled>
+                    <option></option>
+                    <option>Single</option>
+                    <option>Married</option>
+                    <option>Single w/ 1 Dependent</option>
+                    <option>Single w/ 2 Dependent</option>
+                    <option>Single w/ 3 Dependent</option>
+                    <option>Single w/ 4 Dependent</option>
+                    <option>Married w/ 1 Dependent</option>
+                    <option>Married w/ 2 Dependent</option>
+                    <option>Married w/ 3 Dependent</option>
+                    <option>Married w/ 4 Dependent</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-4">Citizenship</label>
+            <div class="col-lg-8">
+                <input class="form-control" type="text" ng-model="profPersonal.citizenship" disabled></input>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-4">Religion</label>
+            <div class="col-lg-8">
+                <input class="form-control" type="text" ng-model="profPersonal.religion" disabled></input>
+            </div>
+        </div>  
+    </div>  
+    <div class="col-lg-4"> 
+        <div class="form-group">
+            <label class="col-lg-4">Language</label>
+            <div class="col-lg-8">
+                <input class="form-control" type="text" ng-model="profPersonal.language" disabled></input>
+            </div>
+        </div> 
+        <div class="form-group">
+            <label class="col-lg-4">Blood Type</label>
+            <div class="col-lg-8"> 
+                <select class="form-control" ng-model="profPersonal.bloodType" disabled>
+                    <option></option>
+                    <option>O +</option>
+                    <option>O -</option>
+                    <option>A +</option>
+                    <option>A -</option> 
+                    <option>B +</option>
+                    <option>B -</option>
+                    <option>AB +</option>
+                    <option>AB -</option> 
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-4">Height</label>
+            <div class="col-lg-8">
+                <input class="form-control" type="text" ng-model="profPersonal.height" disabled></input>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-4">Weight (kg)</label>
+            <div class="col-lg-8">
+                <input class="form-control" type="text" ng-model="profPersonal.weight" disabled></input>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-4">Hair</label>
+            <div class="col-lg-8">
+                <input class="form-control" type="text" ng-model="profPersonal.hair" disabled></input>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-4">Complexion</label>
+            <div class="col-lg-8">
+                <input class="form-control" type="text" ng-model="profPersonal.complexion" disabled></input>
+            </div>
+        </div><br />
+    </div>  
+</form>

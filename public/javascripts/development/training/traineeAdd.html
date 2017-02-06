@@ -1,0 +1,76 @@
+<h4 ng-show="addTraineesLabel">Add Trainee(s)</h4> 
+<h4 ng-show="viewTraineesLabel">View Trainee(s)</h4>
+<form class="form-horizontal"><hr />
+	<div ng-show="addTrainees">
+		<div class="col-lg-12">
+			<div class="form-group">
+				<label class="col-lg-4">Training</label>
+				<div class="col-lg-8">
+					<input class="form-control" type="text" ng-model="training" disabled></input>
+				</div> 
+			</div>
+			<div class="form-group">
+				<label class="col-lg-4">Employee</label>
+				<div class="col-lg-8">
+					<angucomplete-alt id="object"  
+					pause="100" 
+					selected-object="empId" 
+					local-data="employeeNames"
+					initial-value="employeeName"
+					search-fields="employee"  
+					title-field="employee"
+					minlength="1"
+					input-class="form-control form-control-small"
+					match-class="highlight" /> 
+				</div>
+			</div> 
+		</div> 
+		<div class="col-lg-12 pull-right">
+			<ul class="list-unstyled list-inline text-right"> 
+				<li>
+					<button type="button" class="btn btn-success btn-sm" ng-click="addTrainee( trainee )"> SAVE </button> 
+				</li>  
+			</ul>
+		</div>
+	</div>
+	<div ng-show="viewTrainees">
+		<div class="col-lg-12 table-responsive"> 
+			<div class="form-group">   
+				<div class="col-lg-5"> 
+					<div class="input-group"> 
+						<input type="text" class="form-control col-xs-12" placeholder="Search Employee" ng-model="search.employee"> 
+						<span class="input-group-addon"><i class="fa fa-search"></i> </span>
+					</div> 
+				</div>     
+			</div> 
+			<table class="table table-hover">
+				<thead class="table-header">
+					<tr>
+						<th>ID</th> 
+						<th>Training</th>
+						<th class="text-center">Attendees</th> 
+						<th class="text-right">Action</th>  
+					</tr>
+				</thead>
+				<tbody>
+					<tr dir-paginate="trainee in trainees|filter:search|itemsPerPage:15" >
+						<td> {{trainee.id}} </td> 
+						<td> {{trainee.training}} </td>
+						<td class="text-center"> {{trainee.employee}} </td> 
+						<td class="text-right">
+							<a class="btn btn-default btn-sm" title="Delete" ng-click="deleteTrainee( trainee.id )">
+								<i class="fa fa-trash"></i>
+							</a>  
+						</td>  
+					</tr>
+				</tbody>
+			</table>
+			<dir-pagination-controls
+				class="pull-right"
+				max-size="10"
+				direction-links="true"
+				boundary-links="true" >
+			</dir-pagination-controls> 
+		</div>
+	</div>
+</form> 

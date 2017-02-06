@@ -1,0 +1,43 @@
+<h2>Leave Applicants</h2> <br />
+<div class="col-lg-12 table-responsive" ng-show="LeavePendingHistory">
+	<table class="table table-hover">
+		<thead style="background-color:#2A3F54;color:white">
+			<tr>
+				<th style="display:none">ID</th> 
+				<th>Employee</th>
+				<th>Leave Type</th>
+				<th>Mode</th>
+				<th>From</th>
+				<th>To</th> 
+				<th>Date Filed</th> 
+				<th>Reason</th>  
+				<th>Action</th> 
+			</tr>
+		</thead>
+		<tbody>
+			<tr dir-paginate="leavePending in leavePendings|itemsPerPage:15" >
+				<td style="display:none"> {{leavePending.id}} </td> 
+				<td> {{leavePending.employee}} </td>
+				<td> {{leavePending.durFrom}} </td>
+				<td> {{leavePending.durTo}} </td>
+				<td> {{leavePending.dateFiled}} </td>
+				<td> {{leavePending.name}} </td> 
+				<td> {{leavePending.mode}} </td> 
+				<td> {{leavePending.reason}} </td>  
+				<td align="center">
+					<a class="btn btn-success btn-xs" ng-click="approve( leavePending.id )" ng-show="approveButton"> Approve </a>
+					<a class="btn btn-success btn-xs" ng-show="approvedButton" disabled> Approved </a>
+
+					<a class="btn btn-danger btn-xs" ng-click="decline( leavePending.id  )" ng-show="declineButton"> Decline </a>
+					<a class="btn btn-danger btn-xs" ng-show="declinedButton" disabled> Declined </a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<dir-pagination-controls
+		class="pull-right"
+		max-size="10"
+		direction-links="true"
+		boundary-links="true" >
+	</dir-pagination-controls> 
+</div>

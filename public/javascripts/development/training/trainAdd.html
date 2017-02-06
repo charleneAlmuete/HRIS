@@ -1,0 +1,68 @@
+<h4>Add Training</h4><hr />
+<form class="form-horizontal">
+	<div class="col-lg-12">
+		<div class="form-group">
+			<label class="col-lg-4">Training</label>
+			<div class="col-lg-8">
+				<input class="form-control" type="text" ng-model="trainDev.training"></input>
+			</div> 
+		</div>
+		<div class="form-group">
+			<label class="col-lg-4">Topic</label>
+			<div class="col-lg-8">
+				<input class="form-control" type="text" ng-model="trainDev.topic"></input>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-4">Date</label>
+			<div class="col-lg-8">
+				<div class="input-group" moment-picker="trainDev.dateConduct" format="YYYY-MM-DD"> 
+					<input class="form-control" ng-model="trainDev.dateConduct">
+					<span class="input-group-addon">
+						<i class="fa fa-calendar"></i>
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-4">Duration</label>
+			<div class="col-lg-8">
+				<input class="form-control" type="text" ng-model="trainDev.duration"></input>
+			</div> 
+		</div>
+		<div class="form-group">
+			<label class="col-lg-4">Cost</label>
+			<div class="col-lg-8">
+				<input class="form-control" type="text" ng-model="trainDev.cost"></input>
+			</div> 
+		</div>  
+		<div class="form-group">
+			<label class="col-lg-4">Venue</label>
+			<div class="col-lg-8">
+				<input class="form-control" type="text" ng-model="trainDev.venue"></input>
+			</div> 
+		</div> 
+		<div class="form-group">
+			<label class="col-lg-4">Speaker</label>
+			<div class="col-lg-8">
+				<input class="form-control" type="text" ng-model="trainDev.speaker"></input>
+			</div> 
+		</div>  
+		<div class="form-group">
+			<label class="col-lg-4">Benefit for Company</label>
+			<div class="col-lg-8">
+				<textarea class="form-control" ng-model="trainDev.benefit"></textarea>
+			</div> 
+		</div>  
+	</div> 
+	<div class="col-lg-12 pull-right">
+		<ul class="list-unstyled list-inline text-right"> 
+			<li ng-show="add">
+				<button type="button" class="btn btn-success btn-sm" ng-click="addTrainDev( trainDev )"> SAVE </button> 
+			</li>
+			<li ng-show="!add">
+				<button type="button" class="btn btn-success btn-sm" ng-click="updateTrainDev( trainDev )"> UPDATE </button> 
+			</li> 
+		</ul>
+	</div>
+</form> 

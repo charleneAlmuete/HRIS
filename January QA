@@ -1,0 +1,26 @@
+View first before printing   
+Restrict duplication of entry data  
+Session pages
+Checkbox the skills
+
+
+Upload
+-Payslip Data
+-Timesheet
+
+DONE:
+-Change color the top hover navbar
+-Make normal he sidebar
+-Make dropdown filter in List of Employees
+-Back button in adding an employee
+-Bold and Underline the information in Emergency Contact
+-Replace 'reason' into 'reason of leaving' and 'salary' into 'previous salary' in Work Experience
+-Place reason of leaving after from and to in Work Experience
+-Put HR tag between work experience tables
+-Bold and Underline and br the information in Add Appointment
+-Error dateRegularization in appointment form
+-Make the modal wide in Add Appointment 
+-Remove deletE in leave app HR 
+-Automatic display the dates in datepicker  
+-Date file in leave should be only availble for HR
+-Change the colors of modal buttons     

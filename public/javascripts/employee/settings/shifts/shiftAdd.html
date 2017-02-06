@@ -1,0 +1,57 @@
+<h4>Add Shift Schedule</h4><hr /> 
+<form class="form-horizontal" method="POST"> 
+	<div class="col-lg-12"> 
+		<div class="form-group">
+			<label class="col-lg-4">Shift</label>
+			<div class="col-lg-8"> 
+				<select class="form-control" ng-model="shift.shiftgroup_id" ng-options="shift.id as shift.shiftName for shift in shifts"></select> 
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-4">Day</label>
+			<div class="col-lg-8">  
+				<select class="form-control" ng-model="shift.dayShift"> 
+					<option>Monday</option>
+					<option>Tuesday</option>
+					<option>Wednesday</option>
+					<option>Thursday</option>
+					<option>Friday</option>
+					<option>Saturday</option>
+					<option>Sunday</option>
+				</select> 
+			</div>
+		</div>  
+		<div class="form-group">
+			<label class="col-lg-4">Time In</label>
+			<div class="col-lg-8"> 
+				<div class="input-group" moment-picker="shift.timein" format="HH:mm"> 
+					<input class="form-control" ng-model="shift.timein">
+					<span class="input-group-addon">
+						<i class="fa fa-clock-o"></i>
+					</span>
+				</div>
+			</div>	 
+		</div>  
+		<div class="form-group">
+			<label class="col-lg-4">Time Out</label>
+			<div class="col-lg-8"> 
+				<div class="input-group" moment-picker="shift.timeout" format="HH:mm"> 
+					<input class="form-control" ng-model="shift.timeout">
+					<span class="input-group-addon">
+						<i class="fa fa-clock-o"></i>
+					</span>
+				</div>
+			</div>
+		</div>  
+	</div>   
+	<div class="col-lg-12"> 
+		<ul class="list-unstyled list-inline pull-right"> 
+			<li ng-show="add">	
+				<button type="button" class="btn btn-success btn-sm" ng-click="addShift( shift )"> SAVE </button> 
+			</li> 
+			<li ng-show="!add">
+				<button type="button" class="btn btn-success btn-sm" ng-click="updateShift( shift )"> UPDATE </button>  
+			</li>  
+		</ul>
+	</div>
+</form>

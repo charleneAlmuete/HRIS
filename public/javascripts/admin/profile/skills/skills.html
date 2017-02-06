@@ -1,0 +1,21 @@
+<h4><b><u>Skills  </b></u></h4><br /> 
+<div class="col-lg-12 table-responsive">
+	<table class="table table-hover">
+		<thead class="table-header">
+			<tr>
+				<th style="display:none">ID</th>
+				<th>Type</th>
+				<th class="text-center">Skill</th>
+				<th class="text-center">Proficiency Level</th> 
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="skill in profSkills">
+				<td style="display:none"> {{skill.id}} </td>
+				<td> {{skill.type}} </td>
+				<td class="text-center"> {{skill.name}} </td>
+				<td class="text-center"> {{skill.level}} </td> 
+			</tr>
+		</tbody>
+	</table>
+</div>

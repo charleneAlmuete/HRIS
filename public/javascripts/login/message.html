@@ -1,0 +1,33 @@
+<h4>Login </h4><hr />
+<div class="col-lg-12" ng-show="successful">
+	<div class="alert alert-success">
+		<center><b>You are now successfully login!</b></center> 
+	</div>
+	<input class="form-control" type="hidden" ng-model="account.employee_id"></input>
+	<input class="form-control" type="hidden" ng-model="account.role_id"></input>
+	<hr /> 
+	<div class="pull-right" style="margin-top:65px"> 
+		<button class="btn btn-default" ng-click="closeAll( account )"> Close </button>
+	</div>
+
+</div>
+
+<div class="col-lg-12" ng-show="invalid">
+	<div class="alert alert-danger">
+		<center><b>Invalid username or password!</b></center> 
+	</div><hr /> 
+	<div class="pull-right" style="margin-top:65px">
+		<button class="btn btn-default" ng-click="closeAll( account )"> Close </button>
+	</div>
+</div> 
+
+<div class="col-lg-12" ng-show="disable">
+	<div class="alert alert-danger">
+		<center><b>Sorry! your account has been disabled. Please contact the admin for reactivation.</b></center> 
+	</div><hr /> 
+	<div class="pull-right" style="margin-top:65px">
+		<button class="btn btn-default" ng-click="closeAll( account )"> Close </button>
+	</div>
+</div> 
+ 
+ 

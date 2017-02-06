@@ -1,0 +1,23 @@
+<h4><b><u>Educational Background  </b></u></h4><br /> 
+<div class="col-lg-12 col-sm-12 table-responsive">
+	<table class="table table-hover">
+		<thead class="table-header">
+			<tr>
+				<th style="display:none">ID</th>
+				<th>Level Type</th>
+				<th class="text-center">Course/Degree</th>
+				<th class="text-center">School</th>
+				<th class="text-center">Year Graduated</th> 
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="educ in profEducational">
+				<td style="display:none"> {{educ.id}} </td>
+				<td> {{educ.levelType}} </td>
+				<td class="text-center"> {{educ.course}} </td>
+				<td class="text-center"> {{educ.school}} </td>
+				<td class="text-center"> {{educ.yearGrad}} </td> 
+			</tr>
+		</tbody>
+	</table>
+</div> 

@@ -1,0 +1,218 @@
+<h4><b><u>Contact Information</b></u> </h4><br />
+<div class="row row-base">
+	<form class="form-horizontal" name="userForm" ng-submit="submitForm(userForm.$valid)" novalidate> 
+		<div class="col-lg-12"> 
+			<div class="col-lg-6"> 
+				<div class="form-group has-feedback" ng-class="{ 'has-error' : (userForm.resAdd.$invalid && userForm.resAdd.$touched)  }">
+					<label class="col-lg-4">Residential Address<span>*</span></label>
+					<div class="col-lg-8">
+						<input class="form-control" type="text" name="resAdd" ng-model="employee.resAdd" required></input>  
+						<span class="glyphicon glyphicon-remove form-control-feedback" ng-show="(userForm.resAdd.$invalid  && userForm.resAdd.$touched) "></span>
+					</div>
+				</div> 
+				<div class="form-group has-feedback" ng-class="{ 'has-error': userForm.perAdd.$invalid && userForm.perAdd.$touched }">
+					<label class="col-lg-4">Permanent Address<span>*</span></label>
+					<div class="col-lg-8">
+						<input class="form-control" type="text" name="perAdd" ng-model="employee.perAdd" required></input>
+						<span class="glyphicon glyphicon-remove form-control-feedback" ng-show="userForm.perAdd.$invalid && userForm.perAdd.$touched"></span>
+					</div>
+				</div>
+				<div class="form-group has-feedback" ng-class="{ 'has-error': userForm.proAdd.$invalid && userForm.proAdd.$touched }">
+					<label class="col-lg-4">Provincial Address<span>*</span></label>
+					<div class="col-lg-8">
+						<input class="form-control" type="text" name="proAdd" ng-model="employee.proAdd" required></input>
+						<span class="glyphicon glyphicon-remove form-control-feedback" ng-show="userForm.proAdd.$invalid && userForm.proAdd.$touched"></span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-lg-4">Telephone #1</label>
+					<div class="col-lg-8">
+						<input class="form-control" type="tel" ng-model="employee.resTel1"></input>
+					</div>
+				</div> 
+				<div class="form-group">
+					<label class="col-lg-4">Telephone #2</label>
+					<div class="col-lg-8">
+						<input class="form-control" type="tel" ng-model="employee.resTel2"></input>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-6"> 
+				<div class="form-group">
+					<label class="col-lg-4">Mobile #1</label>
+					<div class="col-lg-8">
+						<input class="form-control" type="text" maxlength="11" ng-model="employee.resMobile1"></input>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-lg-4">Mobile #2</label>
+					<div class="col-lg-8">
+						<input class="form-control" type="text" maxlength="11" ng-model="employee.resMobile2"></input>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-lg-4">Email</label>
+					<div class="col-lg-8">
+						<input class="form-control" type="email" ng-model="employee.resEmail"></input>
+					</div>
+				</div>
+			</div>   
+		</div>
+		<div class="col-lg-12"><br />
+			<div class="col-lg-4 col-md-4">
+				<h5><b><u>Father Information</u></b></h5><hr>
+				<div class="form-group">
+					<label class="col-lg-3">Name</label>
+					<div class="col-lg-9">
+						<input class="form-control" type="text" ng-model="employee.fatherName"></input>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-lg-3">Address</label>
+					<div class="col-lg-9">
+						<textarea class="form-control" ng-model="employee.faAdd"></textarea>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-lg-3">Occupation</label>
+					<div class="col-lg-9">
+						<input class="form-control" type="text" ng-model="employee.faOccupation"></input>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-lg-3">Company</label>
+					<div class="col-lg-9">
+						<input class="form-control" type="text" ng-model="employee.faCompany"></input>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-lg-3">Contact No</label>
+					<div class="col-lg-9">
+						<input class="form-control" type="tel" max="11" ng-model="employee.faNo"></input>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-4">
+				<h5><b><u>Mother Information</u></b></h5><hr>
+				<div class="form-group">
+					<label class="col-lg-3">Name</label>
+					<div class="col-lg-9">
+						<input class="form-control" type="text" ng-model="employee.motherName"></input>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-lg-3">Address</label>
+					<div class="col-lg-9">
+						<textarea class="form-control" ng-model="employee.moAdd"></textarea>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-lg-3">Occupation</label>
+					<div class="col-lg-9">
+						<input class="form-control" type="text" ng-model="employee.moOccupation"></input>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-lg-3">Company</label>
+					<div class="col-lg-9">
+						<input class="form-control" type="text" ng-model="employee.moCompany"></input>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-lg-3">Contact No</label>
+					<div class="col-lg-9">
+						<input class="form-control" type="tel" max="11" ng-model="employee.moNo"></input>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-4">
+				<h5><b><u>Spouse Information</u></b></h5><hr />
+				<div class="form-group">
+					<label class="col-lg-3">Name</label>
+					<div class="col-lg-9">
+						<input class="form-control" type="text" ng-model="employee.spouseName"></input>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-lg-3">Address</label>
+					<div class="col-lg-9">
+						<textarea class="form-control" ng-model="employee.spAdd"></textarea>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-lg-3">Occupation</label>
+					<div class="col-lg-9">
+						<input class="form-control" type="text" ng-model="employee.spOccupation"></input>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-lg-3">Company</label>
+					<div class="col-lg-9">
+						<input class="form-control" type="text" ng-model="employee.spCompany"></input>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-lg-3">Contact No</label>
+					<div class="col-lg-9">
+						<input class="form-control" type="tel" max="11" ng-model="employee.spNo"></input>
+					</div>
+				</div>  
+			</div>  
+			<div class="col-lg-12 col-sm-12 col-xs-12">
+				<a class="btn btn-default btn-sm pull-right" ng-click="openDialogChildren()"><i class="fa fa-child"></i> Add Child(ren)</a>
+			</div> 
+			<div class="col-lg-12 col-sm-12 col-xs-12"><br />
+				<ul class="list-unstyled list-inline pull-right"> 
+					<li ng-show="saveBtn">
+						<button class="btn btn-default btn-sm" ng-click="updateBasicContact( employee )"><i class="glyphicon glyphicon-floppy-save"></i></button> 
+					</li> 
+					<li ng-show="updateBtn"> 
+						<button class="btn btn-default btn-sm" ng-click="updateBasicContact( employee )"><i class="glyphicon glyphicon-floppy-save"></i></button>  
+					</li> 
+				</ul> 
+			</div>
+		</div>  
+	</form>  
+	<div class="col-lg-12 col-sm-12 col-xs-12 table-responsive" ng-show="childrenHistory"><br />
+		<table class="table table-hover">
+			<thead class="table-header">
+				<tr>
+					<th style="display:none">ID</th>
+					<th>Child Name</th>
+					<th class="text-center">Gender</th>
+					<th class="text-center">Date of Birth</th>
+					<th class="text-center">Civil Status</th>
+					<th class="text-center">Occupation</th>
+					<th class="text-center">Company</th> 
+					<th class="text-right">Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr dir-paginate="employeeChildren in employeeChildrens|itemsPerPage:5"> 
+					<td style="display:none"> {{employeeChildren.id}} </td>
+					<td> {{employeeChildren.name}} </td>
+					<td class="text-center"> {{employeeChildren.gender}} </td>
+					<td class="text-center"> {{employeeChildren.dateBirth}} </td>
+					<td class="text-center"> {{employeeChildren.civilStatus}} </td>
+					<td class="text-center"> {{employeeChildren.occupation}} </td>
+					<td class="text-center"> {{employeeChildren.company}} </td>
+					<td class="text-right">
+						<a class="btn btn-default btn-sm" ng-click="editDialogChildren( employeeChildren )">
+							<i class="fa fa-pencil"></i>
+						</a>
+						<a class="btn btn-default btn-sm" ng-click="deleteChildren( employeeChildren.id )">
+							<i class="fa fa-trash"></i>
+						</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<dir-pagination-controls
+		class="pull-right"
+		max-size="10"
+		direction-links="true"
+		boundary-links="true" >
+	</dir-pagination-controls>  
+</div>  
+</div> 
+

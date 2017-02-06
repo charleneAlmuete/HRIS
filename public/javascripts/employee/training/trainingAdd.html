@@ -1,0 +1,67 @@
+<h4>Add Trainings and Seminars </h4><hr />
+<form class="form-horizontal" method="POST">
+	<div class="col-lg-12">
+		<div class="form-group">
+			<label class="col-lg-4">Name</label>
+			<div class="col-lg-8">
+				<input class="form-control" type="text" ng-model="training.name"></input>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-4">From</label>
+			<div class="col-lg-8"> 
+				<div class="input-group" moment-picker="training.started" format="YYYY-MM-DD"> 
+					<input class="form-control" ng-model="training.started">
+					<span class="input-group-addon">
+						<i class="fa fa-calendar"></i>
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-4">To</label>
+			<div class="col-lg-8"> 
+				<div class="input-group" moment-picker="training.ended" format="YYYY-MM-DD"> 
+					<input class="form-control" ng-model="training.ended">
+					<span class="input-group-addon">
+						<i class="fa fa-calendar"></i>
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-4">Remarks</label>
+			<div class="col-lg-8">
+				<input class="form-control" type="text" ng-model="training.remarks"></input>
+			</div>
+		</div> 
+		<div class="form-group">
+			<label class="col-lg-4">Institution</label>
+			<div class="col-lg-8">
+				<input class="form-control" type="text" ng-model="training.institution"></input>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-4">Venue</label>
+			<div class="col-lg-8">
+				<input class="form-control" type="text" ng-model="training.venue"></input>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-4">Speaker</label>
+			<div class="col-lg-8">
+				<input class="form-control" type="text" ng-model="training.speaker"></input>
+			</div>
+		</div>
+	</div> <br />
+	<div class="col-lg-12"> 
+		<ul class="list-unstyled list-inline pull-right"> 
+			<li ng-show="add">
+				<button type="button" class="btn btn-success btn-sm" ng-click="addTraining( training )"> SAVE </button> 
+			</li>
+			<li ng-show="!add">
+				<button type="button" class="btn btn-success btn-sm" ng-click="updateTraining( training )"> UPDATE </button> 
+			</li>  
+		</ul>
+	</div>
+</form>

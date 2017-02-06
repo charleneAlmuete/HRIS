@@ -1,0 +1,57 @@
+<!-- <hr class="header_row_top">       -->
+<h2>Users Account</h2><br />
+<div class="row">
+	<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+		<div class="well">
+			<form class="form-horizontal" method="POST">    
+				<div class="form-group" style="padding:5px">
+					<label>Search</label>
+					<div>    
+						<input type="text" class="form-control col-xs-12" placeholder="Search Details" ng-model="search">   
+					</div> 
+				</div> 
+			</form>
+		</div>
+	</div>
+	<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+		<div class="table-responsive"> 
+			<table class="table table-hover">
+				<thead style="background-color:#2A3F54;color:white"> 
+					<tr> 
+						<th style="display:none"> ID </th>
+						<th>Name</th>
+						<th class="text-center">Role</th> 
+						<th class="text-center">Company</th>
+						<th class="text-center">Branch</th>
+						<th class="text-center">Position</th> 
+						<th class="text-center">Status</th> 
+						<th class="text-right">Reset Password</th> 
+					</tr>
+				</thead>
+				<tbody>
+					<tr dir-paginate= "worker in employee|filter:search|itemsPerPage:15">  
+						<td style="display:none"> {{ worker.id }} </td> 
+						<td> {{ worker.employee }} </td>  
+						<td class="text-center"><a editable-select="worker.role_id" e-ng-options="role.id as role.role for role in roles" buttons="no" onaftersave="updateRole( worker )"> {{ worker.role }} </a></td> 
+						<td class="text-center"> {{ worker.company }} </td> 
+						<td class="text-center"> {{ worker.branch }} </td> 
+						<td class="text-center"> {{ worker.position }} </td> 
+						<td class="text-center"><a editable-select="worker.userStatus" e-ng-options="status as status for status in statuses" buttons="no" onaftersave="updateStatus( worker )"> {{ worker.userStatus }} </a></td>    
+						<td class="text-right"> 
+							<a class="btn btn-default btn-sm" title="Reset Password" ng-click="resetPass( worker )">
+								<i class="fa fa-refresh"></i>
+							</a>
+						</td> 
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<dir-pagination-controls
+		class="pull-right"
+		max-size="10"
+		direction-links="true"
+		boundary-links="true" >
+	</dir-pagination-controls>  
+</div>
+</div>
+

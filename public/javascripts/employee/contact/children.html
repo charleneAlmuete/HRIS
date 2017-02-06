@@ -1,0 +1,70 @@
+<!-- <p>{{worker.id}}</p> -->
+<h4> Children Information </h4><hr />
+<form class="form-horizontal" method="POST">
+	<div class="col-lg-12">
+		<div class="form-group">
+			<label class="col-lg-4">Name</label>
+			<div class="col-lg-8">
+				<input class="form-control" type="text" ng-model="children.name"></input>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-4">Gender</label>
+			<div class="col-lg-8">
+				<select class="form-control" ng-model="children.gender">
+					<option></option>
+					<option>Male</option>
+					<option>Female</option>
+				</select>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-4">Date of Birth</label>
+			<div class="col-lg-8">
+				<div class="input-group" moment-picker="children.dateBirth" format="YYYY-MM-DD"> 
+					<input class="form-control" ng-model="children.dateBirth">
+					<span class="input-group-addon">
+						<i class="fa fa-calendar"></i>
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-4">Civil Status</label>
+			<div class="col-lg-8">
+				<select class="form-control" ng-model="children.civilStatus">
+					<option></option>
+					<option>Single</option>
+					<option>Married</option>
+					<option>Widow</option>
+					<option>Widower</option>
+					<option>Separated</option>
+				</select>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-4">Occupation</label>
+			<div class="col-lg-8">
+				<input class="form-control" type="text" ng-model="children.occupation"></input>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-4">Company</label>
+			<div class="col-lg-8">
+				<input class="form-control" type="text" ng-model="children.company"></input>
+			</div>
+		</div>
+		<br /> 
+	</div>
+	<div class="col-lg-12"> 
+		<ul class="list-unstyled list-inline pull-right"> 
+			<li ng-show="addChildren">
+				<button type="button" class="btn btn-success btn-sm" ng-click="addChildren( children )"> SAVE</button>
+			</li>  
+			<li ng-show="!addChildren">
+				<button type="button" class="btn btn-success btn-sm" ng-click="updateChildren( children )"> UPDATE</button>
+			</li>  
+		</ul>
+	</div>
+	
+</form>

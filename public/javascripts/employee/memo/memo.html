@@ -1,0 +1,50 @@
+<h4><b><u>Memorandum 
+	<button class="btn btn-link pull-right" ng-click="addDialogViolation()"><i class="fa fa-plus"></i></button>  
+</b></u></h4><br />    
+<div class="col-lg-12 table-responsive"> 
+	<table class="table table-hover">
+		<thead class="table-header">
+			<tr>
+				<th style="display:none">ID</th> 
+				<th>Memo No.</th>
+				<th>Subject Matter</th>
+				<th>Date Created</th>
+				<th style="display:none">Signed By</th>
+				<th>No. of Offense</th>
+				<th>Category of Offense</th>
+				<th style="display:none">Penalties</th>
+				<th style="display:none">Effect on Penalties</th>
+				<th>Effective Period</th>
+				<th class="text-right">Action</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr dir-paginate="violation in violations|filter:search|itemsPerPage:15" >
+				<td style="display:none"> {{violation.id}} </td> 
+				<td> {{violation.memoNo}} </td>
+				<td> {{violation.memo}} </td>
+				<td> {{violation.dateOfMemo}} </td>
+				<td style="display:none"> {{violation.signedBy}} </td>
+				<td> {{violation.noOfOffense}} </td>
+				<td> {{violation.categoryOfOffense}} </td>
+				<td style="display:none"> {{violation.penalties}} </td>
+				<td style="display:none"> {{violation.effectOnPenalties}} </td>
+				<td> {{violation.effectivePeriod}} </td>
+				<td class="text-right">
+					<a class="btn btn-default btn-sm" ng-click="edit( violation )">
+						<i class="fa fa-pencil"></i>
+					</a>
+					<a class="btn btn-default btn-sm" ng-click="deleteViolation( violation.id )">
+						<i class="fa fa-trash"></i>
+					</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<dir-pagination-controls
+		class="pull-right"
+		max-size="10"
+		direction-links="true"
+		boundary-links="true" >
+	</dir-pagination-controls>
+</div> 

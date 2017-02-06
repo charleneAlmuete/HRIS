@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html ng-app="hris">
+	<head>
+		<title>HRIS</title>
+		<link rel="stylesheet" type="text/css" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="./bower_components/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="./bower_components/ng-dialog/css/ngDialog.min.css">
+		<link rel="stylesheet" type="text/css" href="./bower_components/ng-dialog/css/ngDialog-theme-default.min.css">
+		<link rel="stylesheet" type="text/css" href="./bower_components/ng-dialog/css/ngDialog-theme-plain.min.css">
+		<link rel="stylesheet" type="text/css" href="./bower_components/angular-bootstrap/ui-bootstrap-csp.css">
+		<link rel="stylesheet" type="text/css" href="./bower_components/bootstrap-select/dist/css/bootstrap-select.min.css"> 
+		<link rel="stylesheet" type="text/css" href="./bower_components/angular-flash-alert/dist/angular-flash.min.css"> 
+		<link rel="stylesheet" type="text/css" href="./bower_components/angular-xeditable/dist/css/xeditable.min.css"> 
+		<link rel="stylesheet" type="text/css" href="./bower_components/angucomplete-alt/angucomplete-alt.css">   
+		<link rel="stylesheet" type="text/css" href="./bower_components/angular-moment-picker/dist/angular-moment-picker.min.css"> 
+		<link rel="stylesheet" type="text/css" href="./bower_components/ng-multiselect/dist/ng-multiselect.css"> 
+		<link rel="stylesheet" type="text/css" href="./bower_components/ng-tags-input/ng-tags-input.min.css"> 
+		<link rel="stylesheet" type="text/css" href="./bower_components/ngPrint-master/ngPrint.min.css"> 
+
+		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+		<link rel="stylesheet" type="text/css" href="./public/stylesheets/style.css">
+	</head>
+	<body>
+		 
+		<ui-view></ui-view>
+ 		
+		<script type="text/javascript" src="./bower_components/jquery/dist/jquery.min.js"></script>
+		<script type="text/javascript" src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="./bower_components/angular/angular.min.js"></script>
+		<script type="text/javascript" src="./bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+		<script type="text/javascript" src="./bower_components/angularUtils-master/src/directives/pagination/dirPagination.js"></script>
+		<script type="text/javascript" src="./bower_components/ng-dialog/js/ngDialog.min.js"></script>
+		<script type="text/javascript" src="./bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+		<script type="text/javascript" src="./bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+		<script type="text/javascript" src="./bower_components/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+		<script type="text/javascript" src="./bower_components/angular-flash-alert/dist/angular-flash.min.js"></script>
+		<script type="text/javascript" src="./bower_components/angular-xeditable/dist/js/xeditable.min.js"></script>    
+  		<script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.9.0/ui-bootstrap-tpls.min.js"></script>  
+  		<script type="text/javascript" src="./bower_components/angular-xeditable/dist/js/xeditable.min.js"></script>   
+  		<script type="text/javascript" src="./bower_components/validate/validate.min.js"></script>   
+   		<script type="text/javascript" src="./bower_components/ng-file-upload/ng-file-upload.min.js"></script> 
+   		<script type="text/javascript" src="./bower_components/ng-file-upload/ng-file-upload-shim.min.js"></script>   
+  		<script type="text/javascript" src="./bower_components/angucomplete-alt/angucomplete-alt.js"></script>   
+  		<script type="text/javascript" src="./bower_components/moment/min/moment-with-locales.min.js"></script> 
+  		<script type="text/javascript" src="./bower_components/angular-moment-picker/dist/angular-moment-picker.min.js"></script>
+  		<script type="text/javascript" src="./bower_components/angularjs-dropdown-multiselect/dist/angularjs-dropdown-multiselect.min.js"></script>  
+  		<script type="text/javascript" src="./bower_components/ng-multiselect/dist/ng-multiselect.js"></script>  
+  		<script type="text/javascript" src="./bower_components/ng-tags-input/ng-tags-input.min.js"></script>  
+  		<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.0/lodash.js"></script>
+  		<script type="text/javascript" src="./bower_components/angular-md5/angular-md5.min.js"></script>  
+  		<script type="text/javascript" src="./bower_components/checklist-model/checklist-model.js"></script> 
+  		<script type="text/javascript" src="./bower_components/angular-route/angular-route.min.js"></script> 
+  		<script type="text/javascript" src="./bower_components/ngPrint-master/ngPrint.min.js"></script>
+  		<script type="text/javascript" src="./bower_components/angular-input-ssn/input-ssn.js"></script>      
+		<script type="text/javascript" src="public/javascripts/app.js"></script>
+
+		<script type="text/javascript" src="public/javascripts/employee/personal/personalCtrl.js"></script>
+		<script type="text/javascript" src="public/javascripts/employee/contact/contactCtrl.js"></script>
+		<script type="text/javascript" src="public/javascripts/employee/education/educationCtrl.js"></script>
+		<script type="text/javascript" src="public/javascripts/employee/awards/awardsCtrl.js"></script>
+		<script type="text/javascript" src="public/javascripts/employee/exam/examCtrl.js"></script>
+		<script type="text/javascript" src="public/javascripts/employee/skills/skillsCtrl.js"></script>
+		<script type="text/javascript" src="public/javascripts/employee/work/workCtrl.js"></script>
+		<script type="text/javascript" src="public/javascripts/employee/organization/organizationCtrl.js"></script>
+		<script type="text/javascript" src="public/javascripts/employee/training/trainingCtrl.js"></script>
+		<script type="text/javascript" src="public/javascripts/employee/medical/medicalCtrl.js"></script>
+		<script type="text/javascript" src="public/javascripts/employee/service/serviceCtrl.js"></script>  
+		<script type="text/javascript" src="public/javascripts/employee/search/navbarCtrl.js"></script> 
+		<script type="text/javascript" src="public/javascripts/employee/overtime/overtimeCtrl.js"></script>
+		<script type="text/javascript" src="public/javascripts/employee/violation/violationCtrl.js"></script> 
+		<script type="text/javascript" src="public/javascripts/employee/attendance/attendanceCtrl.js"></script>
+		<script type="text/javascript" src="public/javascripts/employee/leave/leaveAppCtrl.js"></script> 
+		<script type="text/javascript" src="public/javascripts/employee/payslip/payslipHrCtrl.js"></script> 
+		<script type="text/javascript" src="public/javascripts/employee/loans/empLoansCtrl.js"></script> 
+		<script type="text/javascript" src="public/javascripts/employee/banking/bankCtrl.js"></script>
+		<script type="text/javascript" src="public/javascripts/employee/memo/memorandumCtrl.js"></script>
+		<script type="text/javascript" src="public/javascripts/employee/performance/empPerformanceCtrl.js"></script>
+		<script type="text/javascript" src="public/javascripts/employee/recognition/empRecognitionCtrl.js"></script>
+		<script type="text/javascript" src="public/javascripts/employee/appointment/appointmentCtrl.js"></script>
+
+		<script type="text/javascript" src="public/javascripts/employee/search/searchCtrl.js"></script>
+
+		<script type="text/javascript" src="public/javascripts/employee/settings/allowance/allowanceCtrl.js"></script>
+		<script type="text/javascript" src="public/javascripts/employee/settings/benefit/benefitCtrl.js"></script>
+		<script type="text/javascript" src="public/javascripts/employee/settings/branch/branchCtrl.js"></script>
+		<script type="text/javascript" src="public/javascripts/employee/settings/position/posCtrl.js"></script>
+		<script type="text/javascript" src="public/javascripts/employee/settings/company/companyCtrl.js"></script>
+		<script type="text/javascript" src="public/javascripts/employee/settings/leaves/leaveCtrl.js"></script> 
+		<script type="text/javascript" src="public/javascripts/employee/settings/shifts/shiftsCtrl.js"></script>  
+		<script type="text/javascript" src="public/javascripts/employee/settings/loan/lendingcompany/lendingcompanyCtrl.js"></script>
+		<script type="text/javascript" src="public/javascripts/employee/settings/loan/loantype/loantypeCtrl.js"></script>
+		 
+		
+		<script type="text/javascript" src="public/javascripts/jobs/jobsCtrl.js"></script> 
+		<script type="text/javascript" src="public/javascripts/development/training/trainDevCtrl.js"></script>
+
+		<script type="text/javascript" src="public/javascripts/health/incident/incidentCtrl.js"></script>
+		<script type="text/javascript" src="public/javascripts/health/medical/medHealthCtrl.js"></script>
+
+		<script type="text/javascript" src="public/javascripts/benefitPay/benefits/benefitShowCtrl.js"></script>
+		<script type="text/javascript" src="public/javascripts/benefitPay/banking/bankingShowCtrl.js"></script>
+ 		<script type="text/javascript" src="public/javascripts/benefitPay/compensation/compensationShowCtrl.js"></script>
+ 		<script type="text/javascript" src="public/javascripts/benefitPay/leave/leaveShowCtrl.js"></script>
+ 		<script type="text/javascript" src="public/javascripts/benefitPay/loans/loansCtrl.js"></script>
+
+ 		<script type="text/javascript" src="public/javascripts/main/mainCtrl.js"></script>
+ 		<script type="text/javascript" src="public/javascripts/login/loginCtrl.js"></script>
+ 		
+
+ 		<script type="text/javascript" src="public/javascripts/admin/overtime/overtimeUserCtrl.js"></script>
+ 		<script type="text/javascript" src="public/javascripts/admin/attendance/attendanceCtrl.js"></script>
+ 		<script type="text/javascript" src="public/javascripts/admin/ipadd/ipaddCtrl.js"></script>
+ 		<script type="text/javascript" src="public/javascripts/admin/payslip/payslipCtrl.js"></script>  
+ 		<script type="text/javascript" src="public/javascripts/admin/leave/leaveUserCtrl.js"></script>
+ 		<script type="text/javascript" src="public/javascripts/admin/users/usersCtrl.js"></script>  
+
+	</body>
+</html>

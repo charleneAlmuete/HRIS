@@ -1,0 +1,184 @@
+<div ng-controller="navbarCtrl">
+	<div class="form-group">   
+		<ul class="list-unstyled list-inline pull-right">  
+			<li> 
+				<button class="btn btn-primary" disabled><span class="fa fa-check"></span> Employment Status ({{profileNav.emp_status}})</button>
+			</li>  
+		</ul>  
+		<h2>My Profile </h2> 
+	</div> <br />  
+	<div class="container-fluid row-base"><br />  
+		<form class="form-horizontal">  
+			<div class="col-lg-2"> 
+			<!-- <img class="img-circle" width="100%" height= "100%" ng-src="http://theroboerp.com/app/uploads/noimage.png"> 
+			<input type="file" ng-model="employee.image"></input>  -->
+			</div>
+			<div class="col-lg-10">
+				<div class="row">
+					<div class="col-lg-4">  
+						<div class="form-group">
+							<label class="col-lg-4">Firstname<span>*</span></label>
+							<div class="col-lg-8">
+								<input class="form-control" type="text" name="firstname" ng-model="profileNav.fName" disabled></input> 
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4">
+						<div class="form-group">
+							<label class="col-lg-4">Middlename<span>*</span></label>
+							<div class="col-lg-8">
+								<input class="form-control" type="text"  name="mi" ng-model="profileNav.mi" disabled></input>  
+							</div>
+						</div> 
+					</div>
+					<div class="col-lg-4">
+						<div class="form-group">
+							<label class="col-lg-4">Lastname<span>*</span></label>
+							<div class="col-lg-8"> 
+								<input class="form-control" type="text"  name="lastname" ng-model="profileNav.lName" disabled></input> 
+							</div>
+						</div>
+					</div> 
+				</div><hr />
+				<div class="row">
+					<div class="col-lg-4">
+						<div class="form-group">
+							<label class="col-lg-4">Employee ID<span>*</span></label>
+							<div class="col-lg-8">
+								<input class="form-control" type="text"  name="employee_id" ng-model="profileNav.employee_id" disabled></input>  
+							</div>
+						</div> 
+					</div>
+					<div class="col-lg-4">
+						<div class="form-group">
+							<label class="col-lg-4">Date Hired<span>*</span></label>
+							<div class="col-lg-8">
+								<div class="input-group" moment-picker="profileNav.dateHired" format="YYYY-MM-DD"> 
+									<input class="form-control" name="datehired" ng-model="profileNav.dateHired" disabled>
+									<span class="input-group-addon">
+										<i class="fa fa-calendar"></i>
+									</span>
+								</div>
+							</div>
+						</div>  
+					</div>
+					<div class="col-lg-4">
+						<div class="form-group " >
+							<label class="col-lg-4">Company<span>*</span></label>
+							<div class="col-lg-8"> 
+								<select class="form-control" name="company" ng-model="profileNav.company_id" ng-options="company.id as company.code for company in companies" disabled></select>
+							</div>
+						</div> 
+					</div> 
+				</div>
+				<div class="row">
+					<div class="col-lg-4">  
+						<div class="form-group " >
+							<label class="col-lg-4">Branch<span>*</span></label>
+							<div class="col-lg-8"> 
+								<select class="form-control" name="branch" ng-model="profileNav.branch_id" ng-options="branch.id as branch.name for branch in branches" disabled></select> 
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4">  
+						<div class="form-group " >
+							<label class="col-lg-4">Position<span>*</span></label>
+							<div class="col-lg-8"> 
+								<select class="form-control" name="position" ng-model="profileNav.position_id" ng-options="position.id as position.name for position in positions" disabled></select> 
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4">
+						<div class="form-group " >
+							<label class="col-lg-4">Shift<span>*</span></label>
+							<div class="col-lg-8">
+								<select class="form-control" name="shift" ng-model="profileNav.shiftgroup_id" ng-options="shift.id as shift.shiftName for shift in shifts" disabled></select> 
+							</div>
+						</div> 
+					</div> 
+				</div> 
+			</div>   
+		</form> 
+	</div> 
+</div>
+<div ng-show="profDetails">   
+	<div id="accordion"><br />
+		<div class="panel panel-default employee-navbar"> 
+			<ul class="nav nav-justified nav-separator">
+				<li class="text-center separator-radius"><a data-toggle="collapse" data-parent="#accordion" data-target="#personal" href=""> BASIC </a></li>
+				<li class="text-center separator-radius"><a data-toggle="collapse" data-parent="#accordion" data-target="#employment" href=""> EMPLOYMENT </a></li>
+				<li class="text-center"><a data-toggle="collapse" data-parent="#accordion" data-target="#payroll" href=""> PAYROLL </a></li>
+			</ul> <br />   
+			<div class="collapse in" id="personal">  
+				<ul class="nav nav-justified"> 
+					<li class="text-center">
+						<button type="button" class="btn btn-default btn-circle" ui-sref="user.profile.personal" title="Personal Information"> <i class="fa fa-comments-o fa-3x"></i> </button><br />Personal
+					</li>
+					<li class="text-center">
+						<button type="button" class="btn btn-default btn-circle" ui-sref="user.profile.contact" title="Contact Information"> <i class="fa fa-volume-control-phone fa-3x"></i> </button><br />Contact
+					</li> 
+					<li class="text-center">
+						<button type="button" class="btn btn-default btn-circle" ui-sref="user.profile.education" title="Educational Background"> <i class="fa fa-graduation-cap fa-3x"></i> </button><br />Education
+					</li>
+					<li class="text-center">
+						<button type="button" class="btn btn-default btn-circle" ui-sref="user.profile.awards" title="Awards and Achievements"> <i class="fa fa-trophy fa-3x"></i> </button><br />Awards
+					</li>
+					<li class="text-center">
+						<button type="button" class="btn btn-default btn-circle" ui-sref="user.profile.exam" title="Licensure and Examination"> <i class="fa fa-book fa-3x"></i> </button><br />Examinations
+					</li>
+					<li class="text-center">
+						<button type="button" class="btn btn-default btn-circle" ui-sref="user.profile.work" title="Work Experience"><i class="fa fa-globe fa-3x"></i> </button><br />Experience
+					</li>
+					<li class="text-center">
+						<button type="button" class="btn btn-default btn-circle" ui-sref="user.profile.skills" title="Skills"> <i class="fa fa-cog fa-3x"></i> </button><br />Skills
+					</li>
+					<li class="text-center">
+						<button type="button" class="btn btn-default btn-circle" ui-sref="user.profile.organization" title="Organization"> <i class="fa fa-sitemap fa-3x"></i> </button><br />Organization
+					</li>
+					<li class="text-center">
+						<button type="button" class="btn btn-default btn-circle" ui-sref="user.profile.training" title="Trainings and Seminars"> <i class="fa fa-television fa-3x"></i> </button><br />Trainings
+					</li> 
+				</ul>
+			</div>
+			<div class="collapse" id="employment"> 
+				<ul class="nav nav-justified">
+					<li class="text-center">
+						<button type="button" class="btn btn-default btn-circle" ui-sref="user.profile.medical" title="Medical Records"> <i class="fa fa-stethoscope fa-3x"></i> </button><br />Medical
+					</li> 
+					<li class="text-center">
+						<button type="button" class="btn btn-default btn-circle" ui-sref="user.profile.memo" title="Memorandum"> <i class="fa fa-file-text-o fa-3x"></i> </button><br />Memorandum
+					</li>
+					<li class="text-center">
+						<button type="button" class="btn btn-default btn-circle" ui-sref="user.profile.performance" title="Performance Review"> <i class="fa fa-line-chart fa-3x"></i> </button><br />Performance
+					</li>
+					<li class="text-center">
+						<button type="button" class="btn btn-default btn-circle" ui-sref="user.profile.recognition" title="Awards"> <i class="fa fa-trophy fa-3x"></i> </button><br />Awards
+					</li>
+					<li class="text-center">
+						<button type="button" class="btn btn-default btn-circle" ui-sref="user.profile.appointment" title="Appointment"> <i class="fa fa-calendar-check-o fa-3x"></i> </button><br />Appointment
+					</li>
+				</ul>
+			</div>
+			<div class="collapse" id="payroll"> 
+				<ul class="nav nav-justified">
+					<li class="text-center">
+						<button type="button" class="btn btn-default btn-circle" ui-sref="user.profile.service" title="Services"> <i class="fa fa-clock-o fa-3x"></i> </button><br />Services
+					</li>
+					<li class="text-center">
+						<button type="button" class="btn btn-default btn-circle" ui-sref="user.profile.loan" title="Loans"> <i class="fa fa-money fa-3x"></i> </button><br />Loans
+					</li>
+					<li class="text-center">
+						<button type="button" class="btn btn-default btn-circle" ui-sref="user.profile.bank" title="Bank Account"> <i class="fa fa-book fa-3x"></i> </button><br />Bank
+					</li>
+				</ul>
+			</div>  
+		</nav>
+	</div>
+	<div class="navtop col-lg-12"><br/> 
+		<ui-view></ui-view>
+	</div> 
+</div>  
+
+<script src="public/javascripts/employee/search/navbarCtrl.js"></script>
+
+

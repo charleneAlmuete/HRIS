@@ -1,0 +1,90 @@
+<h4><b><u>Service Information</b></u></h4> 
+<form class="form-horizontal" method="POST"> 
+	<div ng-show="otherServices">
+		<div class="col-lg-4">
+			<h5><b><u>Leaves Information
+				<button class="btn btn-link pull-right" ng-click="openDialogAddLeave()"><i class="fa fa-plus"></i></button> 
+			</b></u></h5><hr > 
+			<div class="col-lg-12 table-responsive" >
+				<table class="table table-hover">
+					<thead class="table-header"> 
+						<th class="col-lg-4"> Leaves </th>
+						<th class="col-lg-4 text-center"> Days </th>
+						<th class="col-lg-4 text-right"> Action </th>
+					</thead>
+					<tbody> 
+						<tr ng-repeat="leaves in leavesShow">
+							<td class="col-lg-4"> {{ leaves.name }} </td>
+							<td class="col-lg-4 text-center"> {{ leaves.leavedays }} </td>
+							<td class="col-lg-4 text-right">
+								<a class="btn btn-default btn-sm" ng-click="openDialogEditLeave( leaves )">
+									<i class="fa fa-pencil"></i>
+								</a>
+								<a class="btn btn-default btn-sm" ng-click="deleteLeave( leaves.id )">
+									<i class="fa fa-trash"></i>
+								</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>  
+		</div>
+		<div class="col-lg-4"> 
+			<h5><b><u>Benefits/Incentives Information
+				<button class="btn btn-link pull-right" ng-click="openDialogAddBenefit()"><i class="fa fa-plus"></i></button> 
+			</b></u></h5><hr> 
+			<div class="col-lg-12 table-responsive">
+				<table class="table table-hover">
+					<thead class="table-header">
+						<th class="col-lg-4"> Type </th>
+						<th class="col-lg-4 text-center"> Amount </th>
+						<th class="col-lg-4 text-right"> Action </th>
+					</thead>
+					<tbody> 
+						<tr ng-repeat="benefits in benefitsShow">
+							<td class="col-lg-4"> {{benefits.benefit}} </td>
+							<td class="col-lg-4 text-center"> {{benefits.amount}} </td>
+							<td class="col-lg-4 text-right">
+								<a class="btn btn-default btn-sm" ng-click="openDialogEditBenefit( benefits )">
+									<i class="fa fa-pencil"></i>
+								</a>
+								<a class="btn btn-default btn-sm" ng-click="deleteBenefit( benefits.id )">
+									<i class="fa fa-trash"></i>
+								</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div> 
+		<div class="col-lg-4"> 
+			<h5><b><u>Allowances Information
+				<button class="btn btn-link pull-right" ng-click="openDialogAddAllowance()"><i class="fa fa-plus"></i></button> 
+			</b></u></h5><hr> 
+			<div class="col-lg-12 table-responsive">
+				<table class="table table-hover">
+					<thead class="table-header">
+						<th class="col-lg-4"> Allowance </th>  
+						<th class="col-lg-4 text-center">Amount</th> 
+						<th class="col-lg-4 text-right"> Action </th> 
+					</thead>
+					<tbody> 
+						<tr ng-repeat="allowances in allowancesShow">
+							<td style="display:none">{{allowances.id}} </td>
+							<td class="col-lg-4">{{allowances.name}} </td>
+							<td class="col-lg-4 text-center">{{allowances.amount}} </td> 
+							<td class="col-lg-4 text-right">
+								<a class="btn btn-default btn-sm" ng-click="openDialogEditAllowance( allowances )">
+									<i class="fa fa-pencil"></i>
+								</a>
+								<a class="btn btn-default btn-sm" ng-click="deleteAllowance( allowances.id )">
+									<i class="fa fa-trash"></i>
+								</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div> 
+		</div> 
+	</div> 
+</form> 

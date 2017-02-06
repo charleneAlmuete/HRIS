@@ -1,0 +1,10 @@
+npm install bower -g
+npm install express-generator -g
+express --ejs web_app
+npm install
+bower init
+bower install angular angular ui router bootstrap
+
+
+node ./bin/www ----running in website
+Ctrl + Alt + Shift + F -----alignment

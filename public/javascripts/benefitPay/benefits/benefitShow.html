@@ -1,0 +1,33 @@
+<h2>Benefits Record</h2>
+<p>These are the benefits that the employees have gained in their company.</p><br />
+<div class="row row-base">
+	<div class="col-lg-12">   
+		<div class="input-group col-lg-3"> 
+			<input type="text" class="form-control col-xs-12" placeholder="Search Employee" ng-model="search.employee"> 
+			<span class="input-group-addon"><i class="fa fa-search"></i> </span>
+		</div>  
+		<br />
+		<div class="table-responsive">
+			<table class="table table-hover">
+				<thead class="table-header">
+					<th class="col-lg-4"> Employee </th>
+					<th class="col-lg-4 text-center"> Type </th>
+					<th class="col-lg-4 text-center"> Amount </th>
+				</thead>
+				<tbody> 
+					<tr dir-paginate="benefit in benefits|filter:search|itemsPerPage:30">
+						<td col-lg-4> {{benefit.employee}} </td>
+						<td class="col-lg-4 text-center"> {{benefit.benefit}} </td>
+						<td class="col-lg-4 text-right"> {{benefit.amount}} </td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<dir-pagination-controls
+			class="pull-right"
+			max-size="10"
+			direction-links="true"
+			boundary-links="true" >
+		</dir-pagination-controls>
+	</div>
+</div>

@@ -1,0 +1,23 @@
+<h4><b><u>Organizations  </b></u></h4><br /> 
+<div class="col-lg-12 table-responsive">
+	<table class="table table-hover">
+		<thead class="table-header">
+			<tr>
+				<th style="display:none">ID</th>
+				<th>Institution</th>
+				<th class="text-center">Title</th>
+				<th class="text-center">From</th>
+				<th class="text-center">To</th> 
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="organization in profOrganizations">
+				<td style="display:none"> {{organization.id}} </td>
+				<td> {{organization.institution}} </td>
+				<td class="text-center"> {{organization.title}} </td>
+				<td class="text-center"> {{organization.started}} </td>
+				<td class="text-center"> {{organization.ended}} </td> 
+			</tr>
+		</tbody>
+	</table>
+</div>

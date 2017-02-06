@@ -1,0 +1,53 @@
+<h2>Leave Credits</h2>
+<p>The following are the current leave credits of employees showing their vacation, sick, and emergency leave statuses.</p><br />
+<div class="row row-base">
+	<div class="col-lg-12">   
+		<div class="input-group col-lg-3"> 
+			<input type="text" class="form-control col-xs-12" placeholder="Search Employee" ng-model="search.employee"> 
+			<span class="input-group-addon"><i class="fa fa-search"></i> </span>
+		</div>  
+		<br />
+		<div class="table-responsive">
+			<table class="table table-bordered table-hover">
+				<thead class="table-header">
+					<th> Employee </th> 
+					<th class="text-center" colspan="3"> Vacation Leave </th> 
+					<th class="text-center" colspan="3"> Sick Leave </th>
+					<th class="text-center" colspan="3"> Emergency Leave </th>  
+				</thead>
+				<tbody> 
+					<tr>
+						<td></td> 
+						<td class="text-center success"> Total </td> 
+						<td class="text-center info"> Used </td> 
+						<td class="text-center danger"> Left </td>  
+						<td class="text-center success"> Total </td> 
+						<td class="text-center info"> Used </td> 
+						<td class="text-center danger"> Left </td> 
+						<td class="text-center success"> Total </td> 
+						<td class="text-center info"> Used </td> 
+						<td class="text-center danger"> Left </td> 
+					</tr>
+					<tr dir-paginate="leaveCredit in leaveCredits|filter:search.employee|itemsPerPage:15">
+						<td> {{ leaveCredit.employee }} </td> 
+						<td class="text-center"> {{ leaveCredit.total_vl }} </td>
+						<td class="text-center"> {{ leaveCredit.used_vl }} </td>
+						<td class="text-center"> {{ leaveCredit.rem_vl }} </td>
+						<td class="text-center"> {{ leaveCredit.total_sl }} </td>
+						<td class="text-center"> {{ leaveCredit.used_sl }} </td>
+						<td class="text-center"> {{ leaveCredit.rem_sl }} </td>
+						<td class="text-center"> {{ leaveCredit.total_el }} </td>
+						<td class="text-center"> {{ leaveCredit.used_el }} </td>
+						<td class="text-center"> {{ leaveCredit.rem_el }} </td>   
+					</tr>  
+				</tbody>  
+			</table>
+		</div>
+		<dir-pagination-controls
+			class="pull-right"
+			max-size="10"
+			direction-links="true"
+			boundary-links="true" >
+		</dir-pagination-controls>
+	</div>
+</div>

@@ -1,0 +1,83 @@
+<div class="col-lg-4 col-sm-12 table-responsive">
+	<h4> List of Shift
+		<ul class="list-unstyled list-inline pull-right">  
+			<li> 
+				<button class="btn btn-link" ng-click="addDialogShift()"><span class="fa fa-plus"></span></button> 
+			</li>  
+		</ul> 
+	</h4><br />
+	<table class="table table-hover">
+		<thead class="table-header">
+			<tr>
+				<th class="hidden">ID</th>
+				<th>Shift Type</th>
+				<th class="text-right">Action</th>  
+			</tr>
+		</thead>
+		<tbody>
+			<tr dir-paginate="shift in shifts|itemsPerPage:15">
+				<td class="hidden"> {{shift.id}} </td>
+				<td> {{shift.shiftName}} </td> 
+				<td class="text-right">
+					<a class="btn btn-default btn-sm" ng-click="editShiftType( shift )">
+						<i class="fa fa-pencil"></i>
+					</a>
+					<a class="btn btn-default btn-sm" ng-click="deleteShiftType( shift.id )">
+						<i class="fa fa-trash"></i>
+					</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<dir-pagination-controls
+	class="pull-right"
+	max-size="10"
+	direction-links="true"
+	boundary-links="true" >
+</dir-pagination-controls>
+</div>
+
+<div class="col-lg-8 col-sm-12 table-responsive">
+	<h4> List of Shift Schedules
+		<ul class="list-unstyled list-inline pull-right">  
+			<li> 
+				<button class="btn btn-link" ng-click="addDialogSchedule()"><span class="fa fa-plus"></span></button> 
+			</li>  
+		</ul> 
+	</h4><br />
+	<table class="table table-hover">
+		<thead class="table-header">
+			<tr>
+				<th class="hidden">ID</th>
+				<th>Shift Type</th>
+				<th class="text-center">Day</th>
+				<th class="text-center">Time In</th>
+				<th class="text-center">Time Out</th> 
+				<th class="text-right">Action</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr dir-paginate="shift in shiftList|itemsPerPage:15">
+				<td class="hidden"> {{shift.id}} </td>
+				<td> {{shift.shiftName}} </td>
+				<td class="text-center"> {{shift.dayShift}} </td>
+				<td class="text-center"> {{shift.timein}} </td>
+				<td class="text-center"> {{shift.timeout}} </td>
+				<td class="text-right">
+					<a class="btn btn-default btn-sm" ng-click="editSchedule( shift )">
+						<i class="fa fa-pencil"></i>
+					</a>
+					<a class="btn btn-default btn-sm" ng-click="deleteSchedule( shift.id )">
+						<i class="fa fa-trash"></i>
+					</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<dir-pagination-controls
+	class="pull-right"
+	max-size="10"
+	direction-links="true"
+	boundary-links="true" >
+</dir-pagination-controls>
+</div>

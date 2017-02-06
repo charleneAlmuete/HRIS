@@ -1,0 +1,23 @@
+<h4><b><u>Medical History  </b></u></h4><br /> 
+<div class="col-lg-12 table-responsive">
+	<table class="table table-hover">
+		<thead class="table-header">
+			<tr>
+				<th style="display:none">ID</th>
+				<th>Condition</th>
+				<th class="text-center">Since</th>
+				<th class="text-center">Physician</th>
+				<th class="text-center">Disability</th> 
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="medical in profMedicals">
+				<td style="display:none"> {{medical.id}} </td>
+				<td> {{medical.conditions}} </td>
+				<td class="text-center"> {{medical.started}} </td>
+				<td class="text-center"> {{medical.physician}} </td>
+				<td class="text-center"> {{medical.disability}} </td> 
+			</tr>
+		</tbody>
+	</table>
+</div>

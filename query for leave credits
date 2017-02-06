@@ -1,0 +1,7 @@
+dont add days on the table
+jot them down immediately when registering the leaves of employee
+
+
+
+query for leave credits:
+SELECT CONCAT(emp.fName, ' ', emp.mi, ' ', emp.lName) AS employee, a.leavedays AS total, SUM(IF(c.status= 'approve', c.days_applied, '0')) AS used, IF(c.status= 'approve',a.leavedays - SUM(c.days_applied) , a.leavedays) AS rem FROM serviceleave a LEFT JOIN employees emp ON emp.id= a.employee_id LEFT JOIN leaves b ON b.id = a.leave_id LEFT JOIN leaveapp c ON c.leave_id = a.leave_id AND c.employee_id= a.employee_id WHERE b.name= 'Vacation Leave' GROUP BY a.employee_id

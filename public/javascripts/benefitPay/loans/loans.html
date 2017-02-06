@@ -1,0 +1,50 @@
+<h2>Loan Application</h2>
+<p>Loan Application are for employees who wanted to apply for loan. </p><br />
+<div class="row row-base">
+	<div class="form-group">    
+		<div class="col-lg-3">
+			<div class="input-group pull-left"> 
+				<input type="text" class="form-control col-xs-12" placeholder="Search Details" ng-model="search"> 
+				<span class="input-group-addon"><i class="fa fa-search"></i> </span>
+			</div>
+		</div>
+	</div>  
+	<div class="col-lg-12 table-responsive"> <br />
+		<table class="table table-hover">
+			<thead class="table-header">
+				<tr>
+					<th class="hidden">ID</th> 
+					<th>Employee</th>  
+					<th class="text-left">Company</th>
+					<th class="text-left">Loan Type</th>  
+					<th class="text-right">Amount</th>
+					<th class="text-center">Term</th> 
+					<th class="text-right">Monthly Amortization</th>
+					<th class="text-center">Start Date</th>  
+					<th class="text-center">End Date</th> 
+					<th class="hidden">Remarks</th>  
+				</tr>
+			</thead>
+			<tbody>
+				<tr dir-paginate="loan in loanList|filter:search|itemsPerPage:10" >
+					<td class="hidden"> {{loan.id}} </td> 
+					<td> {{loan.employee}} </td>  
+					<td class="text-left"> {{loan.lendingcompany}} </td> 
+					<td class="text-left"> {{loan.type}} </td>
+					<td class="text-right"> {{loan.amount}} </td>
+					<td class="text-center"> {{loan.term}} </td>
+					<td class="text-right"> {{loan.amortization}} </td>  
+					<td class="text-center"> {{loan.startDate}} </td> 
+					<td class="text-center"> {{loan.endDate}} </td> 
+					<td class="hidden"> {{loan.remarks}} </td>  
+				</tr>
+			</tbody>
+		</table>
+		<dir-pagination-controls
+			class="pull-right"
+			max-size="10"
+			direction-links="true"
+			boundary-links="true" >
+		</dir-pagination-controls> 
+	</div> 
+</div>

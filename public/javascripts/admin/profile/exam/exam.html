@@ -1,0 +1,23 @@
+<h4><b><u>Licensure and Examinations  </b></u></h4><br /> 
+<div class="col-lg-12 table-responsive">
+	<table id="examInfo" class="table table-hover">
+		<thead class="table-header">
+			<tr>
+				<th style="display:none">ID</th>
+				<th>Name</th>
+				<th class="text-center">Rating</th>
+				<th class="text-center">License No</th>
+				<th class="text-center">Image</th> 
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="examination in profExams">
+				<td style="display:none"> {{examination.id}} </td>
+				<td> {{examination.name}} </td>
+				<td class="text-center"> {{examination.rating}} </td>
+				<td class="text-center"> {{examination.licenseNo}} </td>
+				<td class="text-center"> {{examination.image}} </td> 
+			</tr>
+		</tbody>
+	</table>
+</div>

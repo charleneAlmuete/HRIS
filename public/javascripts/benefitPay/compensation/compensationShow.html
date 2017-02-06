@@ -1,0 +1,43 @@
+<h2>Compensation History</h2>
+<p>History to all employee's compensation from probationary to regular including promotions.</p><br />
+<div class="row row-base">
+	<div class="col-lg-12">   
+		<div class="input-group col-lg-3"> 
+			<input type="text" class="form-control col-xs-12" placeholder="Search Employee" ng-model="search.employee"> 
+			<span class="input-group-addon"><i class="fa fa-search"></i> </span>
+		</div>  
+		<br />
+		<div class="table-responsive">
+			<table class="table table-hover">
+				<thead class="table-header">
+					<th> Employee </th>
+					<th class="text-center"> Position </th>
+					<th class="text-center"> Employment Status </th>
+					<th class="text-right"> Basic Salary </th>
+					<th class="text-right"> SSS </th>
+					<th class="text-right"> PHIC </th>
+					<th class="text-right"> HDMF </th>
+					<th class="text-right"> TAX </th> 
+				</thead>
+				<tbody> 
+					<tr dir-paginate="compensation in compensations|filter:search|itemsPerPage:30">
+						<td> {{compensation.employee}} </td>
+						<td class="text-center"> {{compensation.name}} </td>
+						<td class="text-center"> {{compensation.employmentStatus}} </td>
+						<td class="text-right"> {{compensation.basicSalary}} </td>
+						<td class="text-right"> {{compensation.sss}} </td>
+						<td class="text-right"> {{compensation.phic}} </td>
+						<td class="text-right"> {{compensation.hdmf}} </td>
+						<td class="text-right"> {{compensation.tax}} </td> 
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<dir-pagination-controls
+			class="pull-right"
+			max-size="10"
+			direction-links="true"
+			boundary-links="true" >
+		</dir-pagination-controls>
+	</div>
+</div>

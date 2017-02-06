@@ -1,0 +1,36 @@
+<div class="hr">  
+	<div class="header col-lg-3 col-md-4 col-sm-4 col-xs-12"> 
+		<div class="loginForm">
+			<h2 style="color:white;">LOGIN</h2> 
+			<form class="form-horizontal" method="POST">
+				<div class="col-lg-12">  
+					<div class="form-group">  
+						<div class="input-group"> 
+							<i>
+								<input class="form-control" type="text" placeholder="Username" name="name" ng-model="employee.username" ng-change="verifyUser( employee.username )"></input>
+							</i>
+							<span class="input-group-addon"><i class="fa fa-user"></i> </span>
+						</div>    
+					</div>
+
+					<input class="form-control" type="hidden" placeholder="Employee ID" ng-model="employee.employee_id"></input>
+					<input class="form-control" type="hidden" placeholder="Username" ng-model="ret.username"></input> 
+					<input class="form-control" type="hidden" placeholder="Password" ng-model="ret.password"></input>
+					
+					<div class="form-group"> 
+						<div class="input-group"> 
+							<i>
+								<input class="form-control" type="password" name="pass" placeholder="Password" ng-model="employee.password" name="password"></input>
+							</i>
+							<span class="input-group-addon"><i class="fa fa-lock"></i> </span>
+						</div>
+					</div> 
+					<div class="form-group"> 
+						<button class="btn btn-info btn-block" ng-click="loginBtn( employee )">LOGIN</button> 
+					</div> <br />  
+				</div> 
+			</form>
+		</div>
+	</div>  
+</div>
+   

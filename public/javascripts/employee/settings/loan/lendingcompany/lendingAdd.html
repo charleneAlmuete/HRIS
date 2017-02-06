@@ -1,0 +1,21 @@
+<h4>Add Lending Company</h4><hr /> 
+<form class="form-horizontal" method="POST"> 
+	<div class="col-lg-12">  
+		<div class="form-group">
+			<label class="col-lg-4">Company</label>
+			<div class="col-lg-8">
+				<input class="form-control" type="text" ng-model="lending.name"></input>
+			</div>
+		</div> 
+	</div>
+	<div class="col-lg-12"> 
+		<ul class="list-unstyled list-inline pull-right"> 
+			<li ng-show="add">	
+				<button type="button" class="btn btn-success btn-sm" ng-click="addLending( lending )"> SAVE </button> 
+			</li> 
+			<li ng-show="!add">
+				<button type="button" class="btn btn-success btn-sm" ng-click="updateLending( lending )"> UPDATE </button>  
+			</li>  
+		</ul>
+	</div>
+</form>  
