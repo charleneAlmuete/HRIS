@@ -18,7 +18,8 @@ var hris= angular.module( "hris",
 		"ngRoute", 
 		"ngFileUpload", 
 		"ngPrint",
-		"input-ssn" 
+		"input-ssn",
+		"input-tin" 
 	])
 
 	.config ([

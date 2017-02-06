@@ -57,6 +57,7 @@ hris
 
 	       		$scope.updateEmployee = function ( data ) 
 	       		{    
+	       			console.log(data)
 	       			$scope.submitForm= function( isValid )
 	       			{
 	       				if( isValid )
